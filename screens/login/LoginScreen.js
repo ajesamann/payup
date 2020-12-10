@@ -1,9 +1,14 @@
+//react
 import React from 'react';
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
+//styles
+import styles from '../../global-styles/general'
 
 const LoginScreen = () => {
     return (
-        <Text>Working</Text>
+      <View style={styles.centerMiddleContainer}>
+        <Text>Login Screen</Text>
+      </View>
     );
 };
 
