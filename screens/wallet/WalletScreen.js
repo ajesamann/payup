@@ -1,21 +1,19 @@
+//react stuff
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 //navigations
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//screens
-import DashboardScreen from '../dashboard/DashboardScreen';
-import NotificationsScreen from '../notifications/NotificationsScreen';
+//components
+import { TabNavigator } from '../../components/TabNavigator';
 
 const Tab = createBottomTabNavigator();
 
-const Wallet = () => {
+const WalletScreen = () => {
     return (
-      <Tab.Navigator>
-        <Tab.Screen name="Dashboard" component={DashboardScreen} />
-        <Tab.Screen name="Notifications" component={NotificationsScreen} />
-        <Tab.Screen name="Wallet" component={WalletScreen} />
-      </Tab.Navigator>
+      <View>
+        <TabNavigator />
+      </View>
     );
 };
 
-export default Wallet;
+export default WalletScreen;

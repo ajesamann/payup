@@ -1,9 +1,16 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
+//components
+import BackButton from '../../components/BackButton'
+//styles
+import {globalStyles} from '../../global-styles/general'
 
-const CreateAccountScreen = () => {
+const CreateAccountScreen = (props) => {
     return (
-        <Text>CreateAccountScreen Screen</Text>
+        <View style={globalStyles.centerMiddleContainerMax}>
+            <Text>CreateAccountScreen Screen</Text>
+            <BackButton navigation={props.navigation} screen={'login'}/>
+        </View>
     );
 };
 
