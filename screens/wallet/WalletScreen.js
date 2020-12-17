@@ -1,17 +1,11 @@
 //react stuff
 import React from 'react';
-import {Text, View} from 'react-native';
-//navigations
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//components
-import { TabNavigator } from '../../components/TabNavigator';
-
-const Tab = createBottomTabNavigator();
+import { Text,View } from 'react-native';
 
 const WalletScreen = () => {
     return (
       <View>
-        <TabNavigator />
+        <Text>Test</Text>
       </View>
     );
 };

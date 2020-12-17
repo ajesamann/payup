@@ -9,9 +9,10 @@ const LoginScreen = (props) => {
   const [username, onChangeUsername] = React.useState();
   const [password, onChangePassword] = React.useState();
 
-  const login = (props) => {
-    //send a get to the api
-    console.log('Login User')
+  const login = () => {
+    //send a get to the api and log the user in
+    console.log('working');
+    props.navigation.navigate('UserLoggedIn');
   }
 
     return (
