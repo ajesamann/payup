@@ -10,13 +10,21 @@ import TabNavigator from './TabNavigator'
 
 const Stack = createStackNavigator();
 
-const StackNavigator = () => {
+const StackNavigator = (props) => {
     return (
     <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen navigation={useNavigation} name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-        <Stack.Screen navigation={useNavigation} name="UserLoggedIn" component={TabNavigator} options={{ headerShown: false }}/>
-        <Stack.Screen navigation={useNavigation} name="Forgot Password" component={ForgotPasswordScreen} options={{ headerShown: false }}/>
-        <Stack.Screen navigation={useNavigation} name="Create Account" component={CreateAccountScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" options={{ headerShown: false }}>
+        {() => <LoginScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="UserLoggedIn" options={{ headerShown: false }}>
+        {() => <TabNavigator navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="Forgot Password" options={{ headerShown: false }}>
+        {() => <ForgotPasswordScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="Create Account" options={{ headerShown: false }}>
+        {() => <CreateAccountScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
     </Stack.Navigator>
     );
 };

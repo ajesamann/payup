@@ -1,11 +1,13 @@
 //react stuff
 import React from 'react';
 import { Text, View } from 'react-native';
+//styles
+import {globalStyles} from '../../global-styles/general'
 
-const DashboardScreen = () => {
+const DashboardScreen = (props) => {
     return (
-      <View>
-        <Text>Test</Text>
+      <View style={globalStyles.centerMiddleContainerMax}>
+        <Text>{props.lang('hello')}</Text>
       </View>
     );
 };

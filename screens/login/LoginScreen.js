@@ -9,9 +9,10 @@ const LoginScreen = (props) => {
   const [username, onChangeUsername] = React.useState();
   const [password, onChangePassword] = React.useState();
 
+  console.log(props)
+
   const login = () => {
     //send a get to the api and log the user in
-    console.log('working');
     props.navigation.navigate('UserLoggedIn');
   }
 
@@ -34,12 +35,12 @@ const LoginScreen = (props) => {
         <View style={{ width: '100%' }}>
           <View style={{ width: '100%' }}>
             <Button
-              title="Login"
+              title={props.lang('login')}
               onPress={login}
             />
             <Button
               title="Create Account"
-              onPress={() => props.navigation.navigate('Create Account')}
+              onPress={() => {props.navigation.navigate('Create Account')}}
             />
           </View>
           <Button

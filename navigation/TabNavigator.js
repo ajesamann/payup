@@ -1,5 +1,6 @@
 import React from 'react';
 //navigation
+import { useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //screens
 import DashboardScreen from '../screens/dashboard/DashboardScreen';
@@ -12,7 +13,7 @@ Icon.loadFont();
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = () => {
+const TabNavigator = (props) => {
     return (
       <Tab.Navigator initialRouteName="Wallet" 
         screenOptions={({ route }) => ({
@@ -26,8 +27,7 @@ const TabNavigator = () => {
             } else if (route.name === 'Notifications') {
               iconName = 'history-icon';
             }
-
-            // You can return any component that you like here!
+            
             return <Icon name={iconName} size={35} color={'red'}/>;
           },
         })}
@@ -35,9 +35,15 @@ const TabNavigator = () => {
           showLabel: false
         }}
       >
-        <Tab.Screen name="Notifications" component={NotificationsScreen} />
-        <Tab.Screen name="Wallet" component={WalletScreen} />
-        <Tab.Screen name="Dashboard" component={DashboardScreen} />
+        <Tab.Screen name="Notifications">
+        {() => <NotificationsScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Tab.Screen>
+        <Tab.Screen name="Wallet">
+        {() => <WalletScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Tab.Screen>
+        <Tab.Screen name="Dashboard">
+        {() => <DashboardScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Tab.Screen>
       </Tab.Navigator>
     );
 };
