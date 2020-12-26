@@ -6,7 +6,7 @@ import {globalStyles} from '../../global-styles/general'
 
 const DashboardScreen = (props) => {
     return (
-      <View style={globalStyles.centerMiddleContainerMax}>
+      <View style={globalStyles.centerMax}>
         <Text>{props.lang('hello')}</Text>
       </View>
     );

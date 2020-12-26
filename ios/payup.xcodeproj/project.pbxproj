@@ -15,6 +15,9 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* payupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* payupTests.m */; };
+		454E849B25971BA400FF2500 /* Barlow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454E849825971B6D00FF2500 /* Barlow-Bold.ttf */; };
+		454E849C25971BA400FF2500 /* Barlow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454E849A25971B6D00FF2500 /* Barlow-Light.ttf */; };
+		454E849D25971BA500FF2500 /* Barlow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454E849925971B6D00FF2500 /* Barlow-Medium.ttf */; };
 		454F8AB9257DE43F00D8E869 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 454F8AB7257DE43F00D8E869 /* GoogleService-Info.plist */; };
 		45A8D9C6258B188D0027C457 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A8D9C5258B188D0027C457 /* icomoon.ttf */; };
 		724608F31BD79934FE9C7E14 /* libPods-payup-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B9D02DDFB183F7E1953002 /* libPods-payup-tvOS.a */; };
@@ -46,6 +49,7 @@
 		00E356EE1AD99517003FC87E /* payupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = payupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* payupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payupTests.m; sourceTree = "<group>"; };
+		04B04D47FE894B738AD31979 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* payup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = payup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = payup/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = payup/AppDelegate.m; sourceTree = "<group>"; };
@@ -54,23 +58,41 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = payup/main.m; sourceTree = "<group>"; };
 		1AA3337F0B58465D50187D48 /* Pods-payup-payupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup-payupTests.release.xcconfig"; path = "Target Support Files/Pods-payup-payupTests/Pods-payup-payupTests.release.xcconfig"; sourceTree = "<group>"; };
 		27ED1151901C3BC280F267DB /* Pods-payup-payupTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup-payupTests.debug.xcconfig"; path = "Target Support Files/Pods-payup-payupTests/Pods-payup-payupTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2842868DA9704A298C4A13AA /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		291F8F3D60CC90C63AE6C4AB /* Pods-payup-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-payup-tvOS/Pods-payup-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* payup-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "payup-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* payup-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "payup-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C73342572347E48E63B6E5 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		3775681093414672A7AF59C6 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		454E849825971B6D00FF2500 /* Barlow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Bold.ttf"; sourceTree = "<group>"; };
+		454E849925971B6D00FF2500 /* Barlow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Medium.ttf"; sourceTree = "<group>"; };
+		454E849A25971B6D00FF2500 /* Barlow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Light.ttf"; sourceTree = "<group>"; };
 		454F8AB7257DE43F00D8E869 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45A8D9C5258B188D0027C457 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = ../assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		4A0E3D391792A80884F5C80C /* Pods-payup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup.release.xcconfig"; path = "Target Support Files/Pods-payup/Pods-payup.release.xcconfig"; sourceTree = "<group>"; };
+		4E88D7DD3F7D41D2A277977E /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		52B9D02DDFB183F7E1953002 /* libPods-payup-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payup-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F111C630AB1E95FA510D19C /* libPods-payup-payupTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payup-payupTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6397C0FB44BC48D8A9E345A4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		6477264D36D44C1498784681 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		68D3B624148C42D5812F4770 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		69AD81F4ED374E66890B1F1F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		6AD787006D944CFFB41A28CF /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		6CC936F809E2B530484EDB5F /* Pods-payup-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-payup-tvOSTests/Pods-payup-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		76A8B03118CCD919AC305102 /* libPods-payup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = payup/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82429760AE9B4AFC9712D8E5 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		882D617C51DD4211B7966777 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		A3EACA359612CED9A9C19F5B /* libPods-payup-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payup-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C329CE287776B25221B976 /* Pods-payup-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-payup-tvOSTests/Pods-payup-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA54F7A4B5E0456FB3297D6C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		CFD31EE74A8A4A94AE8582EE /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		D8B028487FC330FD52846DA6 /* Pods-payup-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup-tvOS.release.xcconfig"; path = "Target Support Files/Pods-payup-tvOS/Pods-payup-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		DEFBA72D0D5F54F9C9F48C9C /* Pods-payup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup.debug.xcconfig"; path = "Target Support Files/Pods-payup/Pods-payup.debug.xcconfig"; sourceTree = "<group>"; };
+		E661D775CB4341429F08D6C3 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F6B75B4AEE14447DB2E51E34 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +178,25 @@
 		33B183D09A3246B199AD0D0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E88D7DD3F7D41D2A277977E /* AntDesign.ttf */,
+				69AD81F4ED374E66890B1F1F /* Entypo.ttf */,
+				6397C0FB44BC48D8A9E345A4 /* EvilIcons.ttf */,
+				3775681093414672A7AF59C6 /* Feather.ttf */,
+				454E849825971B6D00FF2500 /* Barlow-Bold.ttf */,
+				454E849A25971B6D00FF2500 /* Barlow-Light.ttf */,
+				454E849925971B6D00FF2500 /* Barlow-Medium.ttf */,
+				F6B75B4AEE14447DB2E51E34 /* FontAwesome.ttf */,
+				882D617C51DD4211B7966777 /* FontAwesome5_Brands.ttf */,
+				04B04D47FE894B738AD31979 /* FontAwesome5_Regular.ttf */,
+				CA54F7A4B5E0456FB3297D6C /* FontAwesome5_Solid.ttf */,
+				2842868DA9704A298C4A13AA /* Fontisto.ttf */,
+				6477264D36D44C1498784681 /* Foundation.ttf */,
+				82429760AE9B4AFC9712D8E5 /* Ionicons.ttf */,
+				68D3B624148C42D5812F4770 /* MaterialCommunityIcons.ttf */,
+				6AD787006D944CFFB41A28CF /* MaterialIcons.ttf */,
+				E661D775CB4341429F08D6C3 /* Octicons.ttf */,
+				35C73342572347E48E63B6E5 /* SimpleLineIcons.ttf */,
+				CFD31EE74A8A4A94AE8582EE /* Zocial.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -301,7 +342,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -354,6 +395,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454E849B25971BA400FF2500 /* Barlow-Bold.ttf in Resources */,
+				454E849C25971BA400FF2500 /* Barlow-Light.ttf in Resources */,
+				454E849D25971BA500FF2500 /* Barlow-Medium.ttf in Resources */,
 				45A8D9C6258B188D0027C457 /* icomoon.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				454F8AB9257DE43F00D8E869 /* GoogleService-Info.plist in Resources */,
@@ -700,13 +744,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27ED1151901C3BC280F267DB /* Pods-payup-payupTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = payupTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -723,10 +768,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AA3337F0B58465D50187D48 /* Pods-payup-payupTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = payupTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -807,7 +853,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -835,7 +881,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -862,7 +908,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/payup-tvOS.app/payup-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -889,7 +935,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/payup-tvOS.app/payup-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -916,6 +962,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -940,7 +987,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -976,6 +1023,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -993,7 +1041,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",

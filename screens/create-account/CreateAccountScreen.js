@@ -7,7 +7,7 @@ import {globalStyles} from '../../global-styles/general'
 
 const CreateAccountScreen = (props) => {
     return (
-        <View style={globalStyles.centerMiddleContainerMax}>
+        <View style={globalStyles.centerMax}>
             <Text>CreateAccountScreen Screen</Text>
             <BackButton navigation={props.navigation} screen={'login'}/>
         </View>

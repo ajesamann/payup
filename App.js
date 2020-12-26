@@ -12,8 +12,7 @@ import memoize from "lodash.memoize";
 
 const translationGetters = {
   // lazy requires (metro bundler does not support symlinks)
-  en: () => require("./langs/en.json"),
-  es: () => require("./langs/es.json")
+  en: () => require("./langs/en.json")
 };
 
 const translate = memoize(

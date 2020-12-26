@@ -1,13 +1,17 @@
 //react
 import React from 'react';
-import {StyleSheet, View, TextInput, Button} from 'react-native';
+import {View, TextInput, Text, TouchableOpacity, Image} from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 //styles
+import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general'
+import {loginStyles} from './styles/login'
 import {appColors} from '../../global-styles/colors'
 
 const LoginScreen = (props) => {
   const [username, onChangeUsername] = React.useState();
   const [password, onChangePassword] = React.useState();
+  const [rememberMe, setRememberMe] = React.useState(false);
 
   console.log(props)
 
@@ -17,52 +21,61 @@ const LoginScreen = (props) => {
   }
 
     return (
-      <View style={[globalStyles.centerMiddleContainerMax, globalStyles.primary_bg]}>
-        <View style={[{ width: '100%' }, globalStyles.centerMiddleContainer]}>
-          <TextInput
-            style={styles.input}
-            onChangeText={username => onChangeUsername(username)}
-            value={username}
-            placeholder={'Username'}
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={password => onChangePassword(password)}
-            value={password}
-            placeholder={'Password'}
-          />
-        </View>
-        <View style={{ width: '100%' }}>
-          <View style={{ width: '100%' }}>
-            <Button
-              title={props.lang('login')}
-              onPress={login}
-            />
-            <Button
-              title="Create Account"
-              onPress={() => {props.navigation.navigate('Create Account')}}
-            />
-          </View>
-          <Button
-            title="Forgot Password"
-            onPress={() => props.navigation.navigate('Forgot Password')}
-          />
-        </View>
-      </View>
+      <LinearGradient colors={[appColors.appBlue, appColors.appPurple]} style={globalStyles.centerMax}>
+		<View style={loginStyles.img_con}>
+			<Image source={require('../../assets/logos/payup-white-tp.png')} style={loginStyles.login_logo}/>
+		</View>
+		<View style={[{height: '45%'}, globalStyles.spreadColumn, globalStyles.w100]}>
+			{/* LOGIN INPUTS */}
+			<View style={[globalStyles.centerColumn, globalStyles.w75]}>
+				<TextInput
+					style={[loginStyles.login_input, globalStyles.box_shadow, globalStyles.w100]}
+					onChangeText={username => onChangeUsername(username)}
+					value={username}
+					placeholder={props.lang('username')}
+				/>
+				<TextInput
+					style={[loginStyles.login_input, globalStyles.box_shadow, globalStyles.w100]}
+					onChangeText={password => onChangePassword(password)}
+					value={password}
+					placeholder={props.lang('password')}
+				/>
+				<View style={[globalStyles.spreadRow, globalStyles.mt20, globalStyles.w100]}>
+					<View style={globalStyles.centerRow}>
+						<CheckBox
+							disabled={false}
+							boxType={'square'}
+							value={rememberMe}
+							onValueChange={(newValue) => setRememberMe(newValue)}
+						/>
+						<Text style={[globalStyles.wtext, globalStyles.ml10]}>Remember me</Text>
+					</View>
+					{/* FORGOT PASSWORD BUTTON */}
+					<TouchableOpacity
+						style={globalStyles.centerRow}
+						onPress={() => {props.navigation.navigate('Forgot Password')}}
+					>
+						<Text style={globalStyles.wtext}>{props.lang('forgot_password')}</Text>
+					</TouchableOpacity>
+				</View>
+				{/* LOGIN BUTTON */}
+				<TouchableOpacity
+					style={[globalStyles.centerRow, globalStyles.w100, loginStyles.login_btn, globalStyles.box_shadow]}
+					onPress={() => login()}
+				>
+					<Text style={{color: '#4d0094'}}>{props.lang('login')}</Text>
+				</TouchableOpacity>
+			</View>
+			{/* SIGN UP TEXT */}
+			<View style={globalStyles.centerRow}>
+				<Text style={globalStyles.linkText}>{props.lang('first_time') + " "}</Text>
+				<Text style={globalStyles.linkTextBold} onPress={() => {props.navigation.navigate('Create Account')}}>
+					{props.lang('sign_up')}
+				</Text>
+			</View>
+		</View>
+      </LinearGradient>
     );
 };
-
-
-
-const styles = StyleSheet.create({
-  input: {
-      marginTop: 10,
-      borderWidth: 1,
-      width: '80%',
-      backgroundColor: 'white',
-      borderRadius: 3,
-      padding: 10
-  },
-})
 
 export default LoginScreen;
