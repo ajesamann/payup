@@ -1,19 +1,18 @@
 //react
 import React from 'react';
 import {View, TextInput, Text, TouchableOpacity, Image} from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
-import {globalStyles} from '../../global-styles/general'
-import {loginStyles} from './styles/login'
-import {appColors} from '../../global-styles/colors'
+import {globalStyles} from '../../global-styles/general';
+import {loginStyles} from './styles/login';
+import {appColors} from '../../global-styles/colors';
+//icons
+import Icon from '../../assets/icons/Icons.js';
 
 const LoginScreen = (props) => {
   const [username, onChangeUsername] = React.useState();
   const [password, onChangePassword] = React.useState();
   const [rememberMe, setRememberMe] = React.useState(false);
-
-  console.log(props)
 
   const login = () => {
     //send a get to the api and log the user in
@@ -29,26 +28,25 @@ const LoginScreen = (props) => {
 			{/* LOGIN INPUTS */}
 			<View style={[globalStyles.centerColumn, globalStyles.w75]}>
 				<TextInput
-					style={[loginStyles.login_input, globalStyles.box_shadow, globalStyles.w100]}
+					style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
 					onChangeText={username => onChangeUsername(username)}
 					value={username}
 					placeholder={props.lang('username')}
 				/>
 				<TextInput
-					style={[loginStyles.login_input, globalStyles.box_shadow, globalStyles.w100]}
+					style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
 					onChangeText={password => onChangePassword(password)}
 					value={password}
 					placeholder={props.lang('password')}
 				/>
 				<View style={[globalStyles.spreadRow, globalStyles.mt20, globalStyles.w100]}>
+					{/* REMEMBER ME CHECKBOX */}
 					<View style={globalStyles.centerRow}>
-						<CheckBox
-							disabled={false}
-							boxType={'square'}
-							value={rememberMe}
-							onValueChange={(newValue) => setRememberMe(newValue)}
-						/>
-						<Text style={[globalStyles.wtext, globalStyles.ml10]}>Remember me</Text>
+						{!rememberMe ?
+							<Icon name={'unchecked'} onPress={() => setRememberMe(!rememberMe)} size={18} color={'white'}/>
+							: <Icon name={'checked'} onPress={() => setRememberMe(!rememberMe)} size={18} color={'white'}/>
+						}
+						<Text style={[globalStyles.wtext, globalStyles.ml10]}>{props.lang('remember_me')}</Text>
 					</View>
 					{/* FORGOT PASSWORD BUTTON */}
 					<TouchableOpacity
@@ -60,10 +58,10 @@ const LoginScreen = (props) => {
 				</View>
 				{/* LOGIN BUTTON */}
 				<TouchableOpacity
-					style={[globalStyles.centerRow, globalStyles.w100, loginStyles.login_btn, globalStyles.box_shadow]}
+					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, globalStyles.box_shadow]}
 					onPress={() => login()}
 				>
-					<Text style={{color: '#4d0094'}}>{props.lang('login')}</Text>
+					<Text style={{color: '#4d0094', fontFamily: 'Barlow-Medium'}}>{props.lang('login')}</Text>
 				</TouchableOpacity>
 			</View>
 			{/* SIGN UP TEXT */}

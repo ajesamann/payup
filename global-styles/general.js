@@ -43,8 +43,14 @@ export const globalStyles = StyleSheet.create({
     mt20: {
         marginTop: 20
     },
+    mt25: {
+        marginTop: 25
+    },
     ml10: {
         marginLeft: 10
+    },
+    ml0: {
+        marginLeft: 0
     },
     //widths
     w100: {
@@ -52,6 +58,10 @@ export const globalStyles = StyleSheet.create({
     },
     w75: {
         width: '75%'
+    },
+    //heights
+    h100: {
+        height: "100%"
     },
     //drop shadows
     box_shadow: {
@@ -78,5 +88,22 @@ export const globalStyles = StyleSheet.create({
     primary_bg: {
         backgroundColor: appColors.primary
     },
+    //inputs
+    stack_input: {
+        backgroundColor: 'white',
+        color: appColors.appPurple,
+        height: 40,
+        paddingLeft: 15,
+        borderRadius: 5,
+        marginTop: 15,
+        fontFamily: 'Barlow-Medium'
+    },
+    //buttons
+    stack_btn: {
+        backgroundColor: 'white',
+        height: 40,
+        borderRadius: 5,
+        marginTop: 20,
+    }
 })
   

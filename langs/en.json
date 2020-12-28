@@ -2,8 +2,15 @@
     "login": "Login",
     "hello": "hello this works",
     "password": "Password",
+    "confirm_password": "Confirm Password",
     "first_time": "First time here?",
     "sign_up": "Sign up",
     "forgot_password": "Forgot Password?",
-    "username": "Username"
+    "username": "Username",
+    "remember_me": "Remember me",
+    "enter_email": "Enter your email",
+    "reset_password": "Reset Password",
+    "back_to_login": "Back to login",
+    "email": "Email",
+    "create_account": "Create Account"
 }

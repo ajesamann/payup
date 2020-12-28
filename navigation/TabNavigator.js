@@ -28,7 +28,7 @@ const TabNavigator = (props) => {
               iconName = 'history-icon';
             }
             
-            return <Icon name={iconName} size={35} color={'red'}/>;
+            return <Icon name={iconName} size={25} color={'#4d0094'}/>;
           },
         })}
         tabBarOptions={{
