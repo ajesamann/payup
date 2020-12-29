@@ -8,6 +8,10 @@ import NotificationsScreen from '../screens/notifcations/NotifcationsScreen';
 import WalletScreen from '../screens/wallet/WalletScreen';
 //icons
 import Icon from '../assets/icons/Icons.js'
+//styles
+import LinearGradient from 'react-native-linear-gradient';
+import {globalStyles} from '../global-styles/general';
+import {appColors} from '../global-styles/colors';
 
 Icon.loadFont();
 
@@ -17,7 +21,7 @@ const TabNavigator = (props) => {
     return (
       <Tab.Navigator initialRouteName="Wallet" 
         screenOptions={({ route }) => ({
-          tabBarIcon: () => {
+          tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
             if (route.name === 'Wallet') {
@@ -28,11 +32,16 @@ const TabNavigator = (props) => {
               iconName = 'history-icon';
             }
             
-            return <Icon name={iconName} size={25} color={'#4d0094'}/>;
+            return <Icon name={iconName} size={32} color={color}/>;
           },
         })}
         tabBarOptions={{
-          showLabel: false
+          showLabel: false,
+          activeTintColor: appColors.appPurple,
+          inactiveTintColor: 'gray',
+          style: {
+            height: '12.5%'
+          },
         }}
       >
         <Tab.Screen name="Notifications">

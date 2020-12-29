@@ -30,7 +30,7 @@ const ForgotPasswordScreen = (props) => {
                     <TouchableOpacity
                         style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, globalStyles.box_shadow, globalStyles.mt20]}
                     >
-                        <Text style={{color: '#4d0094', fontFamily: 'Barlow-Medium'}}>{props.lang('reset_password')}</Text>
+                        <Text style={{color: appColors.appPurple, fontFamily: 'Barlow-Medium'}}>{props.lang('reset_password')}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={[{position: "absolute", bottom: 90}, globalStyles.centerColumn, globalStyles.w100]}>

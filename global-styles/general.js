@@ -34,10 +34,23 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center'
     },
+    toBottom: {
+        marginTop: 'auto',
+        paddingBottom: 20
+    },
+    toTop: {
+        marginBottom: 'auto',
+        paddingTop: 20
+    },
     //text
     wtext:{
         fontFamily: 'Barlow-Medium',
         color: 'white'
+    },
+    btnText: {
+        color: appColors.appPurple,
+        textAlign: 'center',
+        fontFamily: 'Barlow-Medium'
     },
     //margin
     mt20: {
@@ -52,9 +65,37 @@ export const globalStyles = StyleSheet.create({
     ml0: {
         marginLeft: 0
     },
+    ml5: {
+        marginLeft: 5
+    },
+    ml10: {
+        marginLeft: 10
+    },
+    mr5: {
+        marginRight: 5
+    },
+    mr10: {
+        marginRight: 10
+    },
+    mb5: {
+        marginBottom: 5
+    },
+
+    mt10: {
+        marginTop: 10
+    },
     //widths
     w100: {
         width: '100%'
+    },
+    w90: {
+        width: '90%'
+    },
+    w85: {
+        width: '85%'
+    },
+    w80: {
+        width: '80%'
     },
     w75: {
         width: '75%'
@@ -70,7 +111,7 @@ export const globalStyles = StyleSheet.create({
             width: 0,
             height: 3,
         },
-        shadowOpacity: .34,
+        shadowOpacity: .25,
         shadowRadius: 6.27,
         elevation: 10,
     },
@@ -92,16 +133,16 @@ export const globalStyles = StyleSheet.create({
     stack_input: {
         backgroundColor: 'white',
         color: appColors.appPurple,
-        height: 40,
+        height: 50,
         paddingLeft: 15,
         borderRadius: 5,
-        marginTop: 15,
+        marginTop: 20,
         fontFamily: 'Barlow-Medium'
     },
     //buttons
     stack_btn: {
         backgroundColor: 'white',
-        height: 40,
+        height: 50,
         borderRadius: 5,
         marginTop: 20,
     }

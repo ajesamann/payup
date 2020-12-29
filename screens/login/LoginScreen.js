@@ -61,7 +61,7 @@ const LoginScreen = (props) => {
 					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, globalStyles.box_shadow]}
 					onPress={() => login()}
 				>
-					<Text style={{color: '#4d0094', fontFamily: 'Barlow-Medium'}}>{props.lang('login')}</Text>
+					<Text style={{color: appColors.appPurple, fontFamily: 'Barlow-Medium'}}>{props.lang('login')}</Text>
 				</TouchableOpacity>
 			</View>
 			{/* SIGN UP TEXT */}

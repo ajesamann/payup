@@ -12,5 +12,8 @@
     "reset_password": "Reset Password",
     "back_to_login": "Back to login",
     "email": "Email",
-    "create_account": "Create Account"
+    "create_account": "Create Account",
+    "send_money": "Send money",
+    "request_money": "Request money",
+    "transfer": "Transfer to bank"
 }
