@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //screens
 import DashboardScreen from '../screens/dashboard/DashboardScreen';
-import NotificationsScreen from '../screens/notifcations/NotifcationsScreen';
+import NotificationsScreen from '../screens/transactions/TransactionsScreen';
 import WalletScreen from '../screens/wallet/WalletScreen';
 //icons
 import Icon from '../assets/icons/Icons.js'
@@ -12,6 +12,7 @@ import Icon from '../assets/icons/Icons.js'
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../global-styles/general';
 import {appColors} from '../global-styles/colors';
+import TransactionsScreen from '../screens/transactions/TransactionsScreen';
 
 Icon.loadFont();
 
@@ -28,7 +29,7 @@ const TabNavigator = (props) => {
               iconName = 'wallet-icon';
             } else if (route.name === 'Dashboard') {
               iconName = 'dashboard-icon';
-            } else if (route.name === 'Notifications') {
+            } else if (route.name === 'Transactions') {
               iconName = 'history-icon';
             }
             
@@ -44,8 +45,8 @@ const TabNavigator = (props) => {
           },
         }}
       >
-        <Tab.Screen name="Notifications">
-        {() => <NotificationsScreen navigation={useNavigation()} lang={props.lang}/>}
+        <Tab.Screen name="Transactions">
+        {() => <TransactionsScreen navigation={useNavigation()} lang={props.lang}/>}
         </Tab.Screen>
         <Tab.Screen name="Wallet">
         {() => <WalletScreen navigation={useNavigation()} lang={props.lang}/>}

@@ -8,29 +8,58 @@ export const walletStyles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20
     },
+    //transaction cards
+    transaction_card: {
+        height: 60,
+        borderBottomWidth: 1,
+        borderBottomColor: appColors.appPurple,
+    },
+    transaction_card_number_add: {
+        color: appColors.appPurple,
+        fontFamily: 'Barlow-Medium',
+        fontSize: 18
+    },
+    transaction_card_number_remove: {
+        color: '#a8a8a8',
+        fontFamily: 'Barlow-Medium',
+        fontSize: 18
+    },
+    transaction_card_from: {
+        color: '#a8a8a8',
+        fontFamily: 'Barlow-Light',
+        fontSize: 15
+    },
     //text
     current_balance_text: {
         fontFamily: 'Barlow-Light',
-        marginBottom: 10,
-        fontSize: 15,
+        fontSize: 17,
         color: 'white'
     },
-    welcome_text: {
-        fontFamily: 'Barlow-light',
-        marginBottom: 30,
-        fontSize: 22,
+    transaction_text: {
+        fontFamily: 'Barlow-Light',
+        fontSize: 17,
         color: appColors.appPurple
     },
     balance_numbers: {
         fontFamily: 'Barlow-Bold',
-        fontSize: 40,
+        fontSize: 35,
+        marginBottom: 30,
+        marginTop: 20,
         color: 'white'
     },
     //buttons
     btn: {
-        height: 50,
+        height: 40,
         flexGrow: 1,
-        borderRadius: 5,
-        backgroundColor: '#f0f0f0'
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: appColors.appPurple
+    },
+    balanceBtn: {
+        height: 40,
+        width: 125,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: 'white',
     }
 })

@@ -15,5 +15,7 @@
     "create_account": "Create Account",
     "send_money": "Send money",
     "request_money": "Request money",
-    "transfer": "Transfer to bank"
+    "add_money": "Add money",
+    "current_balance": "Current Balance:",
+    "withdraw": "Withdraw"
 }

@@ -34,6 +34,12 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center'
     },
+    leftColumn: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'baseline'
+    },
     toBottom: {
         marginTop: 'auto',
         paddingBottom: 20
@@ -50,7 +56,7 @@ export const globalStyles = StyleSheet.create({
     btnText: {
         color: appColors.appPurple,
         textAlign: 'center',
-        fontFamily: 'Barlow-Medium'
+        fontFamily: 'Barlow-Light'
     },
     //margin
     mt20: {
@@ -145,6 +151,14 @@ export const globalStyles = StyleSheet.create({
         height: 50,
         borderRadius: 5,
         marginTop: 20,
+    },
+    //dividers
+    dividerColumn: {
+        width: '100%',
+        borderBottomColor: 'white',
+        marginTop: 10,
+        marginBottom: 40,
+        borderBottomWidth: 1,
     }
 })
   
