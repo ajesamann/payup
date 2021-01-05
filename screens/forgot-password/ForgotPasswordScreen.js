@@ -16,21 +16,21 @@ const ForgotPasswordScreen = (props) => {
     }
   
       return (
-        <LinearGradient colors={[appColors.appBlue, appColors.appPurple]} style={globalStyles.centerMax}>
+        <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
             <View style={[globalStyles.h100, globalStyles.centerColumn, globalStyles.w75]}>
                 <View style={[globalStyles.centerColumn, globalStyles.w100]}>
                     {/* FORGOT PASSWORD EMAIL INPUT */}
                     <TextInput
-                        style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+                        style={[globalStyles.stack_input, , globalStyles.w100]}
                         onChangeText={email => onChangeEmail(email)}
                         value={email}
                         placeholder={props.lang('enter_email')}
                     />
                     {/* RESET PASSWORD BUTTON */}
                     <TouchableOpacity
-                        style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, globalStyles.box_shadow, globalStyles.mt20]}
+                        style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, , globalStyles.mt20]}
                     >
-                        <Text style={{color: appColors.appPurple, fontFamily: 'Barlow-Medium'}}>{props.lang('reset_password')}</Text>
+                        <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium'}}>{props.lang('reset_password')}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={[{position: "absolute", bottom: 90}, globalStyles.centerColumn, globalStyles.w100]}>

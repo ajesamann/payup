@@ -20,7 +20,7 @@ const LoginScreen = (props) => {
   }
 
     return (
-      <LinearGradient colors={[appColors.appBlue, appColors.appPurple]} style={globalStyles.centerMax}>
+      <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
 		<View style={loginStyles.img_con}>
 			<Image source={require('../../assets/logos/payup-white-tp.png')} style={loginStyles.login_logo}/>
 		</View>
@@ -28,13 +28,13 @@ const LoginScreen = (props) => {
 			{/* LOGIN INPUTS */}
 			<View style={[globalStyles.centerColumn, globalStyles.w75]}>
 				<TextInput
-					style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+					style={[globalStyles.stack_input, , globalStyles.w100]}
 					onChangeText={username => onChangeUsername(username)}
 					value={username}
 					placeholder={props.lang('username')}
 				/>
 				<TextInput
-					style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+					style={[globalStyles.stack_input, , globalStyles.w100]}
 					onChangeText={password => onChangePassword(password)}
 					value={password}
 					placeholder={props.lang('password')}
@@ -58,10 +58,10 @@ const LoginScreen = (props) => {
 				</View>
 				{/* LOGIN BUTTON */}
 				<TouchableOpacity
-					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, globalStyles.box_shadow]}
+					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, ]}
 					onPress={() => login()}
 				>
-					<Text style={{color: appColors.appPurple, fontFamily: 'Barlow-Medium'}}>{props.lang('login')}</Text>
+					<Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium'}}>{props.lang('login')}</Text>
 				</TouchableOpacity>
 			</View>
 			{/* SIGN UP TEXT */}

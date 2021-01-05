@@ -40,13 +40,23 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'baseline'
     },
+    leftRow: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
     toBottom: {
         marginTop: 'auto',
-        paddingBottom: 20
     },
     toTop: {
-        marginBottom: 'auto',
-        paddingTop: 20
+        marginBottom: 'auto'
+    },
+    toRight: {
+        marginLeft: 'auto',
+    },
+    toLeft: {
+        marginRight: 'auto',
     },
     //text
     wtext:{
@@ -54,9 +64,14 @@ export const globalStyles = StyleSheet.create({
         color: 'white'
     },
     btnText: {
-        color: appColors.appPurple,
+        color: appColors.primary,
         textAlign: 'center',
-        fontFamily: 'Barlow-Light'
+        fontSize: 15,
+        fontFamily: 'Barlow-Medium'
+    },
+    payup_tag: {
+        color: 'white',
+        fontFamily: 'Barlow-Bold',
     },
     //margin
     mt20: {
@@ -67,6 +82,9 @@ export const globalStyles = StyleSheet.create({
     },
     ml10: {
         marginLeft: 10
+    },
+    ml15: {
+        marginLeft: 15
     },
     ml0: {
         marginLeft: 0
@@ -83,12 +101,32 @@ export const globalStyles = StyleSheet.create({
     mr10: {
         marginRight: 10
     },
+    mr15: {
+        marginRight: 15
+    },
     mb5: {
         marginBottom: 5
     },
-
+    mt5: {
+        marginTop: 5
+    },
     mt10: {
         marginTop: 10
+    },
+    //padding
+    py15: {
+        paddingTop: 15,
+        paddingBottom: 15
+    },
+    pl20: {
+        paddingLeft: 20
+    },
+    pr20: {
+        paddingRight: 20
+    },
+    plr20: {
+        paddingRight: 20,
+        paddingLeft: 20
     },
     //widths
     w100: {
@@ -110,16 +148,20 @@ export const globalStyles = StyleSheet.create({
     h100: {
         height: "100%"
     },
-    //drop shadows
-    box_shadow: {
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: .25,
-        shadowRadius: 6.27,
-        elevation: 10,
+    h25: {
+        height: "25%"
+    },
+    h20: {
+        height: "20%"
+    },
+    h30: {
+        height: "30%"
+    },
+    h75: {
+        height: "75%"
+    },
+    h85: {
+        height: "85%"
     },
     //links
     linkText: {
@@ -138,12 +180,16 @@ export const globalStyles = StyleSheet.create({
     //inputs
     stack_input: {
         backgroundColor: 'white',
-        color: appColors.appPurple,
+        color: appColors.primary,
         height: 50,
         paddingLeft: 15,
         borderRadius: 5,
         marginTop: 20,
         fontFamily: 'Barlow-Medium'
+    },
+    //icons
+    btn_icon: {
+        marginLeft: 7
     },
     //buttons
     stack_btn: {

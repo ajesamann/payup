@@ -19,42 +19,42 @@ const CreateAccountScreen = (props) => {
     }
   
       return (
-        <LinearGradient colors={[appColors.appBlue, appColors.appPurple]} style={globalStyles.centerMax}>
+        <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
             <View style={[globalStyles.h100, globalStyles.centerColumn, globalStyles.w75]}>
                 <View style={[globalStyles.centerColumn, globalStyles.w100]}>
                     {/* USERNAME INPUT */}
                     <TextInput
-                        style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+                        style={[globalStyles.stack_input, , globalStyles.w100]}
                         onChangeText={username => onChangeUsername(username)}
                         value={username}
                         placeholder={props.lang('username')}
                     />
                     {/* EMAIL INPUT */}
                     <TextInput
-                        style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+                        style={[globalStyles.stack_input, , globalStyles.w100]}
                         onChangeText={email => onChangeEmail(email)}
                         value={email}
                         placeholder={props.lang('email')}
                     />
                     {/* PASSWORD INPUT */}
                     <TextInput
-                        style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+                        style={[globalStyles.stack_input, , globalStyles.w100]}
                         onChangeText={password => onChangePassword(password)}
                         value={password}
                         placeholder={props.lang('password')}
                     />
                     {/* CONFIRM PASSWORD INPUT */}
                     <TextInput
-                        style={[globalStyles.stack_input, globalStyles.box_shadow, globalStyles.w100]}
+                        style={[globalStyles.stack_input, , globalStyles.w100]}
                         onChangeText={confirmPassword => onChangeConfirmPassword(confirmPassword)}
                         value={confirmPassword}
                         placeholder={props.lang('confirm_password')}
                     />
                     {/* CREATE ACCOUNT BUTTON */}
                     <TouchableOpacity
-                        style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, globalStyles.box_shadow, globalStyles.mt20]}
+                        style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, , globalStyles.mt20]}
                     >
-                        <Text style={{color: appColors.appPurple, fontFamily: 'Barlow-Medium'}}>{props.lang('create_account')}</Text>
+                        <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium'}}>{props.lang('create_account')}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={[{position: "absolute", bottom: 90}, globalStyles.centerColumn, globalStyles.w100]}>

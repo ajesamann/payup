@@ -33,13 +33,13 @@ const TabNavigator = (props) => {
               iconName = 'history-icon';
             }
             
-            return <Icon name={iconName} size={32} color={color}/>;
+            return <Icon name={iconName} size={focused ? 32 : 24} color={color}/>;
           },
         })}
         tabBarOptions={{
           showLabel: false,
-          activeTintColor: appColors.appPurple,
-          inactiveTintColor: 'gray',
+          activeTintColor: appColors.primary,
+          inactiveTintColor: appColors.gray,
           style: {
             height: '12.5%'
           },
