@@ -107,11 +107,29 @@ export const globalStyles = StyleSheet.create({
     mb5: {
         marginBottom: 5
     },
+    mb30: {
+        marginBottom: 30
+    },
     mt5: {
         marginTop: 5
     },
     mt10: {
         marginTop: 10
+    },
+    mt40: {
+        marginTop: 40
+    },
+    mt30: {
+        marginTop: 30
+    },
+    mt22: {
+        marginTop: 22
+    },
+    //card
+    card: {
+        backgroundColor: 'white',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20
     },
     //padding
     py15: {
@@ -127,6 +145,26 @@ export const globalStyles = StyleSheet.create({
     plr20: {
         paddingRight: 20,
         paddingLeft: 20
+    },
+    ptb20: {
+        paddingTop: 20,
+        paddingBottom: 20
+    },
+    ptb10: {
+        paddingTop: 10,
+        paddingBottom: 10
+    },
+    ptb15: {
+        paddingTop: 15,
+        paddingBottom: 15
+    },
+    ptb17: {
+        paddingTop: 17,
+        paddingBottom: 17
+    },
+    ptb18: {
+        paddingTop: 18,
+        paddingBottom: 18
     },
     //widths
     w100: {
@@ -154,14 +192,32 @@ export const globalStyles = StyleSheet.create({
     h20: {
         height: "20%"
     },
+    h15: {
+        height: "15%"
+    },
+    h5: {
+        height: "5%"
+    },
     h30: {
         height: "30%"
+    },
+    h50: {
+        height: "50%"
+    },
+    h60: {
+        height: "60%"
+    },
+    h70: {
+        height: "70%"
     },
     h75: {
         height: "75%"
     },
     h85: {
         height: "85%"
+    },
+    h80: {
+        height: "80%"
     },
     //links
     linkText: {
@@ -198,6 +254,11 @@ export const globalStyles = StyleSheet.create({
         borderRadius: 5,
         marginTop: 20,
     },
+    delete_x: {
+        fontSize: 20,
+        fontFamily: 'Barlow-Medium',
+        color: appColors.black
+    },
     //dividers
     dividerColumn: {
         width: '100%',
@@ -205,6 +266,18 @@ export const globalStyles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 40,
         borderBottomWidth: 1,
+    },
+    //card
+    card: {
+        backgroundColor: 'white',
+        borderTopRightRadius: 20,
+        borderTopLeftRadius: 20,
+        width: '100%',
+    },
+    full_card: {
+        backgroundColor: 'white',
+        borderRadius: 20,
+        width: '100%',
     }
 })
   

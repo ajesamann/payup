@@ -20,5 +20,12 @@
     "withdraw": "Withdraw",
     "transactions": "Transactions",
     "wallet": "Wallet",
-    "dashboard": "Dashboard"
+    "account": "My Account",
+    "linked_accounts": "Linked Accounts",
+    "link": "Link a",
+    "link_extra": "Link another",
+    "credit_card": "credit card",
+    "debit_card": "debit card",
+    "bank_account": "bank account",
+    "search_contacts": "Search Contacts"
 }
