@@ -57,19 +57,19 @@ const WalletScreen = (props) => {
 							<Text style={[walletStyles.linked_accounts, globalStyles.w100, globalStyles.toLeft]}>{props.lang('linked_accounts')}</Text>
 							<Icon name={'more-icon'} size={7} color={appColors.primary}/>
 						</View>
-						<View style={[globalStyles.w100, globalStyles.toLeft, globalStyles.mt30, globalStyles.spreadRow, globalStyles.plr20, globalStyles.ptb18, walletStyles.linked_account]}>
-							<Icon name={'bank-icon'} size={30} color={appColors.gray}/>
+						<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt30, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>
+							<Icon name={'bank-icon'} size={28} color={appColors.gray}/>
 							<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 						</View>
-						<View style={[globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, globalStyles.ptb18, walletStyles.linked_account]}>
+						<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>
 							<Icon name={'card-icon'} size={20} color={appColors.gray}/>
 							<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 						</View>
-						<View style={[globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, globalStyles.ptb18, walletStyles.linked_account]}>
+						<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>
 							<Icon name={'card-icon'} size={20} color={appColors.gray}/>
 							<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 						</View>
-						<View style={[globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, globalStyles.ptb18, walletStyles.unlinked_account]}>
+						<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.unlinked_account]}>
 							<Icon name={'plus-icon'} size={20} color={appColors.primary}/>
 							<Text style={walletStyles.add_account_text}>{props.lang('link') + ' ' + props.lang('credit_card')}</Text>
 						</View>

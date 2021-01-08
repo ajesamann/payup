@@ -27,5 +27,8 @@
     "credit_card": "credit card",
     "debit_card": "debit card",
     "bank_account": "bank account",
-    "search_contacts": "Search Contacts"
+    "search_contacts": "Search Contacts",
+    "sent_you": "sent you",
+    "accept": "Accept",
+    "deny": "Deny"
 }

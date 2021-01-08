@@ -69,6 +69,18 @@ export const globalStyles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'Barlow-Medium'
     },
+    btnTextWhite: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 15,
+        fontFamily: 'Barlow-Medium'
+    },
+    btnTextGray: {
+        color: appColors.gray,
+        textAlign: 'center',
+        fontSize: 15,
+        fontFamily: 'Barlow-Medium'
+    },
     payup_tag: {
         color: 'white',
         fontFamily: 'Barlow-Bold',
@@ -124,6 +136,14 @@ export const globalStyles = StyleSheet.create({
     },
     mt22: {
         marginTop: 22
+    },
+    mtb20: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    mtb30: {
+        marginTop: 30,
+        marginBottom: 30
     },
     //card
     card: {
@@ -206,6 +226,9 @@ export const globalStyles = StyleSheet.create({
     },
     h60: {
         height: "60%"
+    },
+    h65: {
+        height: "65%"
     },
     h70: {
         height: "70%"
