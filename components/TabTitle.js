@@ -10,7 +10,7 @@ import Icon from '../assets/icons/Icons.js'
 const TabTitle = (props) => {
 
     return (
-      <View style={[globalStyles.h25, globalStyles.toTop, globalStyles.leftRow, globalStyles.w100, globalStyles.plr20]}>
+      <View style={[globalStyles.h20, globalStyles.leftRow, globalStyles.w100, globalStyles.plr20, globalStyles.toTop, globalStyles.pt30]}>
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",

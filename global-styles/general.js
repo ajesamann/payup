@@ -22,6 +22,18 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    bottomColumn: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+    },
+    topColumn: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
     spreadColumn: {
         display: 'flex',
         flexDirection: 'column',
@@ -141,6 +153,10 @@ export const globalStyles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20
     },
+    mtb40: {
+        marginTop: 40,
+        marginBottom: 40
+    },
     mtb30: {
         marginTop: 30,
         marginBottom: 30
@@ -156,6 +172,12 @@ export const globalStyles = StyleSheet.create({
         paddingTop: 15,
         paddingBottom: 15
     },
+    pa20: {
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 20,
+        paddingRight: 20
+    },
     pl20: {
         paddingLeft: 20
     },
@@ -165,6 +187,16 @@ export const globalStyles = StyleSheet.create({
     plr20: {
         paddingRight: 20,
         paddingLeft: 20
+    },
+    pb30: {
+        paddingBottom: 30
+    },
+    pb100: {
+        paddingBottom: 100
+    },
+    ptb30: {
+        paddingTop: 30,
+        paddingBottom: 30
     },
     ptb20: {
         paddingTop: 20,
@@ -185,6 +217,15 @@ export const globalStyles = StyleSheet.create({
     ptb18: {
         paddingTop: 18,
         paddingBottom: 18
+    },
+    pt20: {
+        paddingTop: 20,
+    },
+    pt10: {
+        paddingTop: 10,
+    },
+    pt30: {
+        paddingTop: 30,
     },
     //widths
     w100: {
@@ -284,23 +325,21 @@ export const globalStyles = StyleSheet.create({
     },
     //dividers
     dividerColumn: {
-        width: '100%',
-        borderBottomColor: 'white',
-        marginTop: 10,
-        marginBottom: 40,
+        width: 50,
+        borderBottomColor: appColors.gray,
         borderBottomWidth: 1,
+        marginTop: 30,
+        marginBottom: 30
     },
     //card
     card: {
         backgroundColor: 'white',
         borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-        width: '100%',
+        borderTopLeftRadius: 20
     },
     full_card: {
         backgroundColor: 'white',
         borderRadius: 20,
-        width: '100%',
     }
 })
   

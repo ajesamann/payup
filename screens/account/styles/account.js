@@ -14,13 +14,13 @@ export const accountStyles = StyleSheet.create({
     payup_tag: {
         color: appColors.black,
         fontFamily: 'Barlow-Medium',
-        fontSize: 23,
+        fontSize: 20,
     },
     //notifications
     amount_sent: {
-        fontFamily: 'Barlow-Medium',
-        fontSize: 50,
-        color: appColors.primary
+        fontFamily: 'Barlow-Bold',
+        fontSize: 45,
+        color: appColors.green
     },
     sent_by: {
         fontFamily: 'Barlow-Bold',
@@ -32,12 +32,17 @@ export const accountStyles = StyleSheet.create({
         fontSize: 17,
         color: appColors.black
     },
+    sent_for: {
+        fontFamily: 'Barlow-Light',
+        fontSize: 17,
+        color: appColors.gray
+    },
     accept_btn: {
         height: 40,
         width: 125,
         flexGrow: 1,
         borderRadius: 10,
-        backgroundColor: appColors.primary,
+        backgroundColor: appColors.green,
         marginRight: 12
     },
     deny_btn: {
@@ -45,7 +50,7 @@ export const accountStyles = StyleSheet.create({
         width: 125,
         flexGrow: 1,
         borderRadius: 10,
-        backgroundColor: appColors.error,
+        backgroundColor: appColors.lightGray,
         marginLeft: 12
     },
     notif_icon: {

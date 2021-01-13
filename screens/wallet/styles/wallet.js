@@ -1,14 +1,15 @@
 import { StyleSheet } from "react-native";
 import {appColors} from '../../../global-styles/colors';
+import {actuatedNormalize} from '../../../global-styles/fontSize';
 
 export const walletStyles = StyleSheet.create({
     //text
     balance_numbers: {
-        fontFamily: 'Barlow-Medium',
+        fontFamily: 'Barlow-Bold',
         fontSize: 35,
         marginBottom: 30,
         marginTop: 30,
-        color: appColors.primary
+        color: appColors.green
     },
     linked_accounts: {
         color: appColors.primary,
@@ -21,7 +22,7 @@ export const walletStyles = StyleSheet.create({
         borderRadius: 10,
     },
     unlinked_account: {
-        borderColor: appColors.primary,
+        borderColor: appColors.green,
         borderWidth: 1,
         borderRadius: 10,
     },
@@ -34,7 +35,7 @@ export const walletStyles = StyleSheet.create({
     add_account_text: {
         fontFamily: 'Barlow-Light',
         fontSize: 17,
-        color: appColors.primary
+        color: appColors.green
     },
     //buttons
     balanceBtn: {
@@ -49,6 +50,6 @@ export const walletStyles = StyleSheet.create({
         width: 125,
         flexGrow: 1,
         borderRadius: 10,
-        backgroundColor: appColors.lightGray,
+        backgroundColor: appColors.green,
     }
 })

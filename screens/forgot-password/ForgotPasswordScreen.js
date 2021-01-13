@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, TouchableOpacity, Text} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text, StatusBar} from 'react-native';
 //components
 import BackButton from '../../components/BackButton'
 //styles
@@ -17,6 +17,7 @@ const ForgotPasswordScreen = (props) => {
   
       return (
         <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
+		    <StatusBar barStyle="light-content" />
             <View style={[globalStyles.h100, globalStyles.centerColumn, globalStyles.w75]}>
                 <View style={[globalStyles.centerColumn, globalStyles.w100]}>
                     {/* FORGOT PASSWORD EMAIL INPUT */}

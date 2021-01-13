@@ -15,11 +15,11 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* payupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* payupTests.m */; };
-		453BEF4925A6C9150069CEFD /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 453BEF4825A6C9150069CEFD /* icomoon.ttf */; };
 		454E849B25971BA400FF2500 /* Barlow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454E849825971B6D00FF2500 /* Barlow-Bold.ttf */; };
 		454E849C25971BA400FF2500 /* Barlow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454E849A25971B6D00FF2500 /* Barlow-Light.ttf */; };
 		454E849D25971BA500FF2500 /* Barlow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454E849925971B6D00FF2500 /* Barlow-Medium.ttf */; };
 		454F8AB9257DE43F00D8E869 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 454F8AB7257DE43F00D8E869 /* GoogleService-Info.plist */; };
+		45918EC225AEB6E7008B1E35 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45918EC125AEB6E7008B1E35 /* icomoon.ttf */; };
 		724608F31BD79934FE9C7E14 /* libPods-payup-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B9D02DDFB183F7E1953002 /* libPods-payup-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C3CE9BD9665C58847C396F6 /* libPods-payup-payupTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F111C630AB1E95FA510D19C /* libPods-payup-payupTests.a */; };
@@ -64,11 +64,11 @@
 		2D02E4901E0B4A5D006451C7 /* payup-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "payup-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C73342572347E48E63B6E5 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		3775681093414672A7AF59C6 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		453BEF4825A6C9150069CEFD /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = ../../../../../Downloads/icomoon/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		454E849825971B6D00FF2500 /* Barlow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Bold.ttf"; sourceTree = "<group>"; };
 		454E849925971B6D00FF2500 /* Barlow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Medium.ttf"; sourceTree = "<group>"; };
 		454E849A25971B6D00FF2500 /* Barlow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Light.ttf"; sourceTree = "<group>"; };
 		454F8AB7257DE43F00D8E869 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45918EC125AEB6E7008B1E35 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = ../../../../../Downloads/icomoon/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		4A0E3D391792A80884F5C80C /* Pods-payup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payup.release.xcconfig"; path = "Target Support Files/Pods-payup/Pods-payup.release.xcconfig"; sourceTree = "<group>"; };
 		4E88D7DD3F7D41D2A277977E /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		52B9D02DDFB183F7E1953002 /* libPods-payup-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payup-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +226,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				453BEF4825A6C9150069CEFD /* icomoon.ttf */,
+				45918EC125AEB6E7008B1E35 /* icomoon.ttf */,
 				454F8AB7257DE43F00D8E869 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* payup */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -398,7 +398,7 @@
 				454E849B25971BA400FF2500 /* Barlow-Bold.ttf in Resources */,
 				454E849C25971BA400FF2500 /* Barlow-Light.ttf in Resources */,
 				454E849D25971BA500FF2500 /* Barlow-Medium.ttf in Resources */,
-				453BEF4925A6C9150069CEFD /* icomoon.ttf in Resources */,
+				45918EC225AEB6E7008B1E35 /* icomoon.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				454F8AB9257DE43F00D8E869 /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,

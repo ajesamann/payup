@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import {appColors} from '../../../global-styles/colors';
 
-export const transactionStyles = StyleSheet.create({
+export const activityStyles = StyleSheet.create({
     //transaction cards
     transaction_card: {
         height: 60,
@@ -9,7 +9,7 @@ export const transactionStyles = StyleSheet.create({
         borderBottomColor: appColors.lightGray,
     },
     transaction_card_number_add: {
-        color: appColors.primary,
+        color: appColors.green,
         fontFamily: 'Barlow-Medium',
         fontSize: 18
     },

@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //screens
 import AccountScreen from '../screens/account/AccountScreen';
-import TransactionsScreen from '../screens/transactions/TransactionsScreen';
+import ActivityScreen from '../screens/activity/ActivityScreen';
 import WalletScreen from '../screens/wallet/WalletScreen';
 //icons
 import Icon from '../assets/icons/Icons.js'
@@ -28,11 +28,11 @@ const TabNavigator = (props) => {
               iconName = 'wallet-icon';
             } else if (route.name === 'Account') {
               iconName = 'dashboard-icon';
-            } else if (route.name === 'Transactions') {
+            } else if (route.name === 'Activity') {
               iconName = 'history-icon';
             }
             
-            return <Icon name={iconName} size={focused ? 32 : 24} color={color}/>;
+            return <Icon name={iconName} size={focused ? 34 : 26} color={color}/>;
           },
         })}
         tabBarOptions={{
@@ -44,8 +44,8 @@ const TabNavigator = (props) => {
           },
         }}
       >
-        <Tab.Screen name="Transactions">
-        {() => <TransactionsScreen navigation={useNavigation()} lang={props.lang}/>}
+        <Tab.Screen name="Activity">
+        {() => <ActivityScreen navigation={useNavigation()} lang={props.lang}/>}
         </Tab.Screen>
         <Tab.Screen name="Wallet">
         {() => <WalletScreen navigation={useNavigation()} lang={props.lang}/>}

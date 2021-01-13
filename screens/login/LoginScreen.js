@@ -1,6 +1,6 @@
 //react
 import React from 'react';
-import {View, TextInput, Text, TouchableOpacity, Image} from 'react-native';
+import {View, TextInput, Text, TouchableOpacity, Image, StatusBar} from 'react-native';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
@@ -21,6 +21,7 @@ const LoginScreen = (props) => {
 
     return (
       <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
+		<StatusBar barStyle="light-content" />
 		<View style={loginStyles.img_con}>
 			<Image source={require('../../assets/logos/payup-white-tp.png')} style={loginStyles.login_logo}/>
 		</View>
