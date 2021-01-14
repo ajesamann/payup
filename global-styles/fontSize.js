@@ -1,18 +1,10 @@
 import { Dimensions, Platform, PixelRatio } from 'react-native';
 
-const {
-       width: SCREEN_WIDTH,
-       height: SCREEN_HEIGHT,
-     } = Dimensions.get('window');
+let SCREEN_WIDTH = Dimensions.get('window').width; // get current width
+let SCALE = 375; // constant, 375 is standard width of  iphone 6 / 7 / 8 
 
-     // based on iphone 5s's scale
-     const scale = SCREEN_WIDTH / 375;
-
-  export function actuatedNormalize(size) {
-    const newSize = size * scale 
-    if (Platform.OS === 'ios') {
-        return Math.round(PixelRatio.roundToNearestPixel(newSize))
-    } else {
-        return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
-    }
-  }
+export const size = (size) => {
+    const ratio = size / SCALE; // get ratio based on your standard scale 
+    const newSize = Math.round(ratio * SCREEN_WIDTH);
+    return newSize; 
+}

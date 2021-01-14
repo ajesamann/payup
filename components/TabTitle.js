@@ -4,23 +4,24 @@ import { View, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from './../global-styles/general';
 import {appColors} from './../global-styles/colors';
+import {size} from '../global-styles/fontSize';
 //icons
 import Icon from '../assets/icons/Icons.js'
 
 const TabTitle = (props) => {
 
     return (
-      <View style={[globalStyles.h20, globalStyles.leftRow, globalStyles.w100, globalStyles.plr20, globalStyles.toTop, globalStyles.pt30]}>
+      <View style={[globalStyles.h22, globalStyles.leftRow, globalStyles.w100, globalStyles.plr20, globalStyles.toTop,]}>
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",
-                    fontSize: 40,
+                    fontSize: size(40),
                     color: props.color
                 }}
             >
             {props.title}
             </Text>
-            {props.icon ? <Icon name={props.icon} size={40} color={'white'}/> : null}
+            {props.icon ? <Icon name={props.icon} size={size(35)} color={'white'}/> : null}
       </View>
     );
 };

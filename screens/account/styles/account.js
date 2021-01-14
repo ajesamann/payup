@@ -5,11 +5,11 @@ export const accountStyles = StyleSheet.create({
     //payup tag
     payup_tag_container: {
         backgroundColor: 'white',
-        borderRadius: 100,
-        paddingLeft: 20,
-        paddingTop: 6,
-        paddingBottom: 11,
-        paddingRight: 20
+        borderRadius: 10,
+        paddingLeft: 23,
+        paddingTop: 11,
+        paddingBottom: 15,
+        paddingRight: 23
     },
     payup_tag: {
         color: appColors.black,
