@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
 import {appColors} from '../../global-styles/colors';
 import {walletStyles} from './styles/wallet';
-import {size} from '../../global-styles/fontSize'
+import {size} from '../../global-styles/sizing'
 //components
 import TabTitle from '../../components/TabTitle';
 //icons
@@ -74,10 +74,10 @@ const WalletScreen = (props) => {
 						<Icon name={'card-icon'} size={size(18)} color={appColors.gray}/>
 						<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 					</View>
-					<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.unlinked_account]}>
+					{/* <View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.unlinked_account]}>
 						<Icon name={'plus-icon'} size={size(18)} color={appColors.green}/>
 						<Text style={walletStyles.add_account_text}>{props.lang('link') + ' ' + props.lang('credit_card')}</Text>
-					</View>
+					</View> */}
 				</ScrollView>
 			</View>
 		</LinearGradient>

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import {appColors} from '../../../global-styles/colors';
-import {size} from '../../../global-styles/fontSize'
+import {size} from '../../../global-styles/sizing';
 
 export const walletStyles = StyleSheet.create({
     //text
@@ -28,7 +28,7 @@ export const walletStyles = StyleSheet.create({
     },
     card_number: {
         fontFamily: 'Barlow-Medium',
-        fontSize: size(15),
+        fontSize: size(14),
         color: appColors.black,
         letterSpacing: 2
     },
@@ -40,14 +40,14 @@ export const walletStyles = StyleSheet.create({
     //buttons
     balanceBtn: {
         height: size(37.5),
-        width: 125,
+        width: size(125),
         flexGrow: 1,
         borderRadius: 10,
         backgroundColor: appColors.primary,
     },
     interactBtn: {
         height: size(37.5),
-        width: 125,
+        width: size(125),
         flexGrow: 1,
         borderRadius: 10,
         backgroundColor: appColors.green,

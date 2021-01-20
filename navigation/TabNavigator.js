@@ -40,7 +40,7 @@ const TabNavigator = (props) => {
           activeTintColor: appColors.primary,
           inactiveTintColor: appColors.gray,
           style: {
-            height: '12.5%'
+            height: '10%'
           },
         }}
       >

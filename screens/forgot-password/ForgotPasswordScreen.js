@@ -6,14 +6,10 @@ import BackButton from '../../components/BackButton'
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
 import {appColors} from '../../global-styles/colors';
+import {size} from '../../global-styles/sizing'
 
 const ForgotPasswordScreen = (props) => {
     const [email, onChangeEmail] = React.useState();
-  
-    const login = () => {
-      //send a get to the api and log the user in
-      props.navigation.navigate('UserLoggedIn');
-    }
   
       return (
         <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
@@ -22,7 +18,7 @@ const ForgotPasswordScreen = (props) => {
                 <View style={[globalStyles.centerColumn, globalStyles.w100]}>
                     {/* FORGOT PASSWORD EMAIL INPUT */}
                     <TextInput
-                        style={[globalStyles.stack_input, , globalStyles.w100]}
+                        style={[globalStyles.stack_input, , globalStyles.w100, {fontSize: size(13)}]}
                         onChangeText={email => onChangeEmail(email)}
                         value={email}
                         placeholder={props.lang('enter_email')}
@@ -31,7 +27,7 @@ const ForgotPasswordScreen = (props) => {
                     <TouchableOpacity
                         style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, , globalStyles.mt20]}
                     >
-                        <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium'}}>{props.lang('reset_password')}</Text>
+                        <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('reset_password')}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={[{position: "absolute", bottom: 90}, globalStyles.centerColumn, globalStyles.w100]}>
@@ -40,7 +36,7 @@ const ForgotPasswordScreen = (props) => {
                         style={globalStyles.centerRow}
                         onPress={() => {props.navigation.navigate('Login')}}
                     >
-                        <Text style={globalStyles.wtext}>{props.lang('back_to_login')}</Text>
+                        <Text style={[globalStyles.wtext, {fontSize: size(13)}]}>{props.lang('back_to_login')}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

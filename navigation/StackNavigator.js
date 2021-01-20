@@ -5,8 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 //screens
 import CreateAccountScreen from '../screens/create-account/CreateAccountScreen';
 import ForgotPasswordScreen from '../screens/forgot-password/ForgotPasswordScreen';
+import SettingsScreen from '../screens/settings/SettingsScreen';
 import LoginScreen from '../screens/login/LoginScreen';
-import TabNavigator from './TabNavigator'
+import TabNavigator from './TabNavigator';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,9 @@ const StackNavigator = (props) => {
         </Stack.Screen>
         <Stack.Screen name="Create Account" options={{ headerShown: false }}>
         {() => <CreateAccountScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="Settings" options={{ headerShown: false }}>
+        {() => <SettingsScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
     </Stack.Navigator>
     );

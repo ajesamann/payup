@@ -26,7 +26,7 @@ const currentUserLang = { languageTag: "en", isRTL: false }
 
 const setI18nConfig = () => {
   // fallback if no available language fits
-  const fallback = { languageTag: "es", isRTL: false };
+  const fallback = { languageTag: "en", isRTL: false };
 
   const { languageTag, isRTL } =
     currentUserLang || RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) ||

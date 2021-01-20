@@ -12,13 +12,13 @@ import TabTitle from '../../components/TabTitle';
 import { useIsFocused } from '@react-navigation/native';
 
 const AccountScreen = (props) => {
+    //for the status bar color
     const isFocused = useIsFocused();
 
     return (
 	<LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
         {isFocused ? <StatusBar barStyle="light-content" /> : null}
-        {/* RECENT TRANSACTIONS CARDS */}
-		<TabTitle title={props.lang('account')} color={'white'} icon={'settings-icon'}/>
+		<TabTitle navigation={props.navigation} title={props.lang('account')} color={'white'} icon={'settings-icon'}/>
         <View style={[globalStyles.w100, globalStyles.plr20, globalStyles.topColumn, {flex: 1}]}>
             <View style={[globalStyles.toLeft, globalStyles.toTop]}>
                 {/* USERS PAYUP TAG */}

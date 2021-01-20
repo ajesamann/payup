@@ -1,7 +1,9 @@
 ***Notes***
 
-In order to make the app work on all device sizes we need to do some things:
+TO DO:
 
-[] - Adjust font sizes using some type of device size recognizer.
-[] - Figure out what containers will ALWAYS be the same size & the content will never change % wise on every device.
-[] - Have margin and padding adjust accordingly per device using the same formula as the font.
+[] - Settings screen
+[] - Payment processing screen (the keypad and to who and from etc.)
+[] - Screen for each individual transaction to show more info about that transaction
+[] - Linked accounts editing screen
+[] - QR code screen

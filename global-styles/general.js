@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native"
 import {appColors} from './colors';
+import {size} from './sizing';
 
 export const globalStyles = StyleSheet.create({
     //alignment
@@ -78,19 +79,19 @@ export const globalStyles = StyleSheet.create({
     btnText: {
         color: appColors.primary,
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: size(13),
         fontFamily: 'Barlow-Medium'
     },
     btnTextWhite: {
         color: 'white',
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: size(13),
         fontFamily: 'Barlow-Medium'
     },
     btnTextGray: {
         color: appColors.gray,
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: size(13),
         fontFamily: 'Barlow-Medium'
     },
     payup_tag: {
@@ -307,7 +308,7 @@ export const globalStyles = StyleSheet.create({
     stack_input: {
         backgroundColor: 'white',
         color: appColors.primary,
-        height: 50,
+        height: size(45),
         paddingLeft: 15,
         borderRadius: 5,
         marginTop: 20,
@@ -320,12 +321,12 @@ export const globalStyles = StyleSheet.create({
     //buttons
     stack_btn: {
         backgroundColor: 'white',
-        height: 50,
+        height: size(45),
         borderRadius: 5,
         marginTop: 20,
     },
     delete_x: {
-        fontSize: 20,
+        fontSize: size(18),
         fontFamily: 'Barlow-Medium',
         color: appColors.black
     },

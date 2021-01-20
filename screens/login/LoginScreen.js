@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
 import {loginStyles} from './styles/login';
 import {appColors} from '../../global-styles/colors';
+import {size} from '../../global-styles/sizing'
 //icons
 import Icon from '../../assets/icons/Icons.js';
 
@@ -29,13 +30,13 @@ const LoginScreen = (props) => {
 			{/* LOGIN INPUTS */}
 			<View style={[globalStyles.centerColumn, globalStyles.w75]}>
 				<TextInput
-					style={[globalStyles.stack_input, , globalStyles.w100]}
+					style={[globalStyles.stack_input, , globalStyles.w100, {fontSize: size(13)}]}
 					onChangeText={username => onChangeUsername(username)}
 					value={username}
 					placeholder={props.lang('username')}
 				/>
 				<TextInput
-					style={[globalStyles.stack_input, , globalStyles.w100]}
+					style={[globalStyles.stack_input, , globalStyles.w100, {fontSize: size(13)}]}
 					onChangeText={password => onChangePassword(password)}
 					value={password}
 					placeholder={props.lang('password')}
@@ -44,31 +45,31 @@ const LoginScreen = (props) => {
 					{/* REMEMBER ME CHECKBOX */}
 					<View style={globalStyles.centerRow}>
 						{!rememberMe ?
-							<Icon name={'unchecked'} onPress={() => setRememberMe(!rememberMe)} size={18} color={'white'}/>
-							: <Icon name={'checked'} onPress={() => setRememberMe(!rememberMe)} size={18} color={'white'}/>
+							<Icon name={'unchecked'} onPress={() => setRememberMe(!rememberMe)} size={size(16)} color={'white'}/>
+							: <Icon name={'checked'} onPress={() => setRememberMe(!rememberMe)} size={size(16)} color={'white'}/>
 						}
-						<Text style={[globalStyles.wtext, globalStyles.ml10]}>{props.lang('remember_me')}</Text>
+						<Text style={[globalStyles.wtext, globalStyles.ml10, {fontSize: size(13)}]}>{props.lang('remember_me')}</Text>
 					</View>
 					{/* FORGOT PASSWORD BUTTON */}
 					<TouchableOpacity
 						style={globalStyles.centerRow}
 						onPress={() => {props.navigation.navigate('Forgot Password')}}
 					>
-						<Text style={globalStyles.wtext}>{props.lang('forgot_password')}</Text>
+						<Text style={[{fontSize: size(13)}, globalStyles.wtext]}>{props.lang('forgot_password')}</Text>
 					</TouchableOpacity>
 				</View>
 				{/* LOGIN BUTTON */}
 				<TouchableOpacity
-					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, ]}
+					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn]}
 					onPress={() => login()}
 				>
-					<Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium'}}>{props.lang('login')}</Text>
+					<Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('login')}</Text>
 				</TouchableOpacity>
 			</View>
 			{/* SIGN UP TEXT */}
 			<View style={globalStyles.centerRow}>
-				<Text style={globalStyles.linkText}>{props.lang('first_time') + " "}</Text>
-				<Text style={globalStyles.linkTextBold} onPress={() => {props.navigation.navigate('Create Account')}}>
+				<Text style={[globalStyles.linkText, {fontSize: size(13)}]}>{props.lang('first_time') + " "}</Text>
+				<Text style={[globalStyles.linkTextBold, {fontSize: size(13)}]} onPress={() => {props.navigation.navigate('Create Account')}}>
 					{props.lang('sign_up')}
 				</Text>
 			</View>
