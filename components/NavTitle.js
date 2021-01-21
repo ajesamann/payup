@@ -1,3 +1,4 @@
+//react
 import React from 'react';
 import { View, Text } from 'react-native';
 //styles
@@ -8,15 +9,15 @@ import {size} from '../global-styles/sizing';
 //icons
 import Icon from '../assets/icons/Icons.js'
 
-const TabTitle = (props) => {
+const NavTitle = (props) => {
 
-    const navUser = (location) => {
+    const goBack = (location) => {
         switch (location){
-            // nav user to settings screen
-            case "settings-icon":
-                props.navigation.navigate('Settings');
+            // nav user to my account screen
+            case "My Account":
+                props.navigation.navigate('UserLoggedIn');
                 break;
-            // nav user to qr code screen
+            // nav user to wallet screen
             case "qr-icon":
                 break;
         }
@@ -24,6 +25,7 @@ const TabTitle = (props) => {
 
     return (
       <View style={[globalStyles.h22, globalStyles.leftRow, globalStyles.w100, globalStyles.plr20, globalStyles.toTop]}>
+            <Icon name={props.icon} onPress={() => goBack(props.location)} size={size(27)} color={'white'}/>
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",
@@ -33,9 +35,8 @@ const TabTitle = (props) => {
             >
             {props.title}
             </Text>
-            {props.icon ? <Icon name={props.icon} onPress={() => navUser(props.icon)} size={size(35)} color={'white'}/> : null}
       </View>
     );
 };
 
-export default TabTitle;
+export default NavTitle;

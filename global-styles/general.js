@@ -251,6 +251,9 @@ export const globalStyles = StyleSheet.create({
     h25: {
         height: "25%"
     },
+    h10: {
+        height: 10
+    },
     h23: {
         height: "23%"
     },

@@ -1,7 +1,5 @@
 import React from 'react';
 import {View, TextInput, TouchableOpacity, Text, StatusBar} from 'react-native';
-//components
-import BackButton from '../../components/BackButton'
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';

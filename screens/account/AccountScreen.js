@@ -23,7 +23,7 @@ const AccountScreen = (props) => {
             <View style={[globalStyles.toLeft, globalStyles.toTop]}>
                 {/* USERS PAYUP TAG */}
                 <View style={accountStyles.payup_tag_container}>
-                    <Text style={accountStyles.payup_tag}>@ajesamannBRUH</Text>
+                    <Text style={accountStyles.payup_tag}>@ajesamann</Text>
                 </View>
             </View>
             {/* NOTIFICATIONS */}

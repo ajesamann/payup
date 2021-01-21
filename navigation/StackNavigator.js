@@ -7,6 +7,7 @@ import CreateAccountScreen from '../screens/create-account/CreateAccountScreen';
 import ForgotPasswordScreen from '../screens/forgot-password/ForgotPasswordScreen';
 import SettingsScreen from '../screens/settings/SettingsScreen';
 import LoginScreen from '../screens/login/LoginScreen';
+import AccountScreen from '../screens/account/AccountScreen';
 import TabNavigator from './TabNavigator';
 
 const Stack = createStackNavigator();

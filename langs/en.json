@@ -31,5 +31,10 @@
     "sent_you": "sent you",
     "accept": "Accept",
     "deny": "Deny",
-    "settings": "Settings"
+    "settings": "Settings",
+    "settings_account": "Account",
+    "settings_notifications": "Notifications",
+    "settings_security": "Security",
+    "settings_preferences": "Preferences",
+    "settings_logout": "Log Out"
 }
