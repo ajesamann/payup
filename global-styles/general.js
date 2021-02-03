@@ -105,6 +105,12 @@ export const globalStyles = StyleSheet.create({
     mt25: {
         marginTop: 25
     },
+    mt50: {
+        marginTop: 50
+    },
+    mt60: {
+        marginTop: 60
+    },
     ml10: {
         marginLeft: 10
     },
@@ -194,6 +200,12 @@ export const globalStyles = StyleSheet.create({
     },
     pb100: {
         paddingBottom: 100
+    },
+    pb50: {
+        paddingBottom: 50
+    },
+    pb75: {
+        paddingBottom: 75
     },
     ptb30: {
         paddingTop: 30,

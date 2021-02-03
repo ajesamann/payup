@@ -9,12 +9,14 @@ import SettingsScreen from '../screens/settings/SettingsScreen';
 import LoginScreen from '../screens/login/LoginScreen';
 import AccountScreen from '../screens/account/AccountScreen';
 import TabNavigator from './TabNavigator';
+import TransactionScreen from '../screens/activity/TransactionScreen';
 
 const Stack = createStackNavigator();
 
 const StackNavigator = (props) => {
     return (
     <Stack.Navigator initialRouteName="Login">
+        {/* screens before user is logged in */}
         <Stack.Screen name="Login" options={{ headerShown: false }}>
         {() => <LoginScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
@@ -27,8 +29,13 @@ const StackNavigator = (props) => {
         <Stack.Screen name="Create Account" options={{ headerShown: false }}>
         {() => <CreateAccountScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
+
+        {/* logged in screens */}
         <Stack.Screen name="Settings" options={{ headerShown: false }}>
         {() => <SettingsScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="TransactionScreen" options={{ headerShown: false }}>
+        {() => <TransactionScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
     </Stack.Navigator>
     );

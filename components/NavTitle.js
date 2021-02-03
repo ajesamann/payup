@@ -25,11 +25,11 @@ const NavTitle = (props) => {
 
     return (
       <View style={[globalStyles.h22, globalStyles.leftRow, globalStyles.w100, globalStyles.plr20, globalStyles.toTop]}>
-            <Icon name={props.icon} onPress={() => goBack(props.location)} size={size(27)} color={'white'}/>
+            <Icon name={props.icon} onPress={() => goBack(props.location)} size={size(27)} color={props.color}/>
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",
-                    fontSize: size(40),
+                    fontSize: size(37),
                     color: props.color
                 }}
             >

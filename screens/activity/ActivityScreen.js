@@ -1,6 +1,6 @@
 //react
 import React from 'react';
-import {View, StatusBar, Text, ScrollView} from 'react-native';
+import {View, StatusBar, Text, ScrollView, TouchableOpacity} from 'react-native';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
@@ -13,6 +13,12 @@ import { useIsFocused } from '@react-navigation/native';
 
 const TransactionsScreen = (props) => {
 	const isFocused = useIsFocused();
+
+	const openTransactionInfo = (transaction) => {
+		//pass that specific transaction info to the specific transaction screen
+		props.navigation.navigate('TransactionScreen');
+		console.log('working');
+	};
 	
     return (
 	<LinearGradient colors={['white', 'white']} style={globalStyles.centerMax}>
@@ -20,13 +26,13 @@ const TransactionsScreen = (props) => {
         {/* RECENT TRANSACTIONS CARDS */}
 		<TabTitle title={props.lang('activity')} color={appColors.black}/>
 		<ScrollView style={globalStyles.w100}>
-			<View style={[activityStyles.transaction_card, globalStyles.w100, globalStyles.centerColumn]}>
+			<TouchableOpacity onPress={() => openTransactionInfo()} style={[activityStyles.transaction_card, globalStyles.w100, globalStyles.centerColumn]}>
 				<View style={[globalStyles.w90, globalStyles.spreadRow]}>
 					<Text style={activityStyles.transaction_card_number_add}>+ 143.50</Text>
 					<Text style={activityStyles.transaction_card_date}>10/23/20</Text>
 					<Text style={activityStyles.transaction_card_from}>@bigmoneyE</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 			<View style={[activityStyles.transaction_card, globalStyles.w100, globalStyles.centerColumn]}>
 				<View style={[globalStyles.w90, globalStyles.spreadRow]}>
 					<Text style={activityStyles.transaction_card_number_remove}>- 39.20</Text>

@@ -36,5 +36,9 @@
     "settings_notifications": "Notifications",
     "settings_security": "Security",
     "settings_preferences": "Preferences",
-    "settings_logout": "Log Out"
+    "settings_logout": "Log Out",
+    "transaction_amount": "Amount:",
+    "transaction_from": "From:",
+    "transaction_date": "Date:",
+    "create_support_ticket": "Create A Support Ticket"
 }
