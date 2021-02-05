@@ -13,12 +13,9 @@ const NavTitle = (props) => {
 
     const goBack = (location) => {
         switch (location){
-            // nav user to my account screen
+            // nav user back to previous screen
             case "My Account":
                 props.navigation.navigate('UserLoggedIn');
-                break;
-            // nav user to wallet screen
-            case "qr-icon":
                 break;
         }
     }
@@ -29,7 +26,7 @@ const NavTitle = (props) => {
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",
-                    fontSize: size(37),
+                    fontSize: size(35),
                     color: props.color
                 }}
             >

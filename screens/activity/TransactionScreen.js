@@ -19,8 +19,8 @@ const TransactionScreen = (props) => {
 		{isFocused ? <StatusBar barStyle="dark-content" /> : null}
         {/* RECENT TRANSACTIONS CARDS */}
 		<NavTitle location={'My Account'} navigation={props.navigation} icon={"arrow-left-icon"} title={'#A-14323'} color={'black'}/>
-		<View style={[globalStyles.w100, globalStyles.plr20, globalStyles.card, globalStyles.pb100, {flexGrow: 1}]}>
-            <View>
+		<View style={[globalStyles.w100, globalStyles.card, globalStyles.pb100, {flexGrow: 1}]}>
+            <View style={globalStyles.plr20}>
                 <View style={[transactionStyles.infoCon, globalStyles.spreadRow]}>
                     <Text style={[transactionStyles.infoText]}>{props.lang('transaction_amount')}</Text>
                     <Text style={[transactionStyles.infoText]}>$100</Text>
@@ -40,7 +40,7 @@ const TransactionScreen = (props) => {
                     <Text style={[transactionStyles.infoText, {color: appColors.gray}]}>Pending</Text>
                 </View>
             </View>
-            <TouchableOpacity style={[globalStyles.mt60, transactionStyles.supportBtnCon, globalStyles.w100, globalStyles.centerColumn]}>
+            <TouchableOpacity style={[transactionStyles.supportBtnCon, globalStyles.centerColumn, globalStyles.w100, globalStyles.mt60]}>
                 <Text style={[transactionStyles.supportBtnText]}>{props.lang('create_support_ticket')}</Text>
             </TouchableOpacity>
         </View>

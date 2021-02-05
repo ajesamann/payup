@@ -6,8 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import CreateAccountScreen from '../screens/create-account/CreateAccountScreen';
 import ForgotPasswordScreen from '../screens/forgot-password/ForgotPasswordScreen';
 import SettingsScreen from '../screens/settings/SettingsScreen';
+import QrCodeScreen from '../screens/wallet/QrCodeScreen';
 import LoginScreen from '../screens/login/LoginScreen';
-import AccountScreen from '../screens/account/AccountScreen';
 import TabNavigator from './TabNavigator';
 import TransactionScreen from '../screens/activity/TransactionScreen';
 
@@ -33,6 +33,9 @@ const StackNavigator = (props) => {
         {/* logged in screens */}
         <Stack.Screen name="Settings" options={{ headerShown: false }}>
         {() => <SettingsScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="QR" options={{ headerShown: false }}>
+        {() => <QrCodeScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="TransactionScreen" options={{ headerShown: false }}>
         {() => <TransactionScreen navigation={useNavigation()} lang={props.lang}/>}

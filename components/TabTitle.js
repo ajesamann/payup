@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from './../global-styles/general';
@@ -18,6 +18,7 @@ const TabTitle = (props) => {
                 break;
             // nav user to qr code screen
             case "qr-icon":
+                props.navigation.navigate('QR');
                 break;
         }
     }
@@ -27,13 +28,13 @@ const TabTitle = (props) => {
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",
-                    fontSize: size(37),
+                    fontSize: size(35),
                     color: props.color
                 }}
             >
             {props.title}
             </Text>
-            {props.icon ? <Icon name={props.icon} onPress={() => navUser(props.icon)} size={size(35)} color={'white'}/> : null}
+            {props.icon ? <TouchableOpacity><Icon name={props.icon} onPress={() => navUser(props.icon)} size={size(35)} color={'white'}/></TouchableOpacity> : null}
       </View>
     );
 };

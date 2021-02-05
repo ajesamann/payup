@@ -20,7 +20,7 @@ const WalletScreen = (props) => {
     return (
 		<LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
 			{isFocused ? <StatusBar barStyle="light-content" /> : null}
-			<TabTitle title={props.lang('wallet')} color={'white'} icon={'qr-icon'}/>
+			<TabTitle navigation={props.navigation} title={props.lang('wallet')} color={'white'} icon={'qr-icon'}/>
 			<View style={[globalStyles.w100, globalStyles.plr20, globalStyles.topColumn, globalStyles.card, {flexGrow: 1}]}>
 				{/* BALANCE TEXT */}
 				<Text style={[walletStyles.balance_numbers, globalStyles.toLeft]}>$34.98</Text>

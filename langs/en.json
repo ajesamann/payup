@@ -40,5 +40,6 @@
     "transaction_amount": "Amount:",
     "transaction_from": "From:",
     "transaction_date": "Date:",
-    "create_support_ticket": "Create A Support Ticket"
+    "create_support_ticket": "Create A Support Ticket",
+    "my_code": "My Code"
 }
