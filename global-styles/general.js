@@ -79,19 +79,19 @@ export const globalStyles = StyleSheet.create({
     btnText: {
         color: appColors.primary,
         textAlign: 'center',
-        fontSize: size(13),
+        fontSize: size(14),
         fontFamily: 'Barlow-Medium'
     },
     btnTextWhite: {
         color: 'white',
         textAlign: 'center',
-        fontSize: size(13),
+        fontSize: size(14),
         fontFamily: 'Barlow-Medium'
     },
     btnTextGray: {
         color: appColors.gray,
         textAlign: 'center',
-        fontSize: size(13),
+        fontSize: size(14),
         fontFamily: 'Barlow-Medium'
     },
     payup_tag: {
@@ -195,8 +195,15 @@ export const globalStyles = StyleSheet.create({
         paddingRight: 20,
         paddingLeft: 20
     },
+    plr40: {
+        paddingRight: 40,
+        paddingLeft: 40
+    },
     pb30: {
         paddingBottom: 30
+    },
+    pb15: {
+        paddingBottom: 15
     },
     pb100: {
         paddingBottom: 100
@@ -347,8 +354,8 @@ export const globalStyles = StyleSheet.create({
     },
     //dividers
     dividerColumn: {
-        width: 50,
-        borderBottomColor: appColors.gray,
+        width: '100%',
+        borderBottomColor: appColors.black,
         borderBottomWidth: 1,
         marginTop: 30,
         marginBottom: 30

@@ -17,6 +17,11 @@ import { useIsFocused } from '@react-navigation/native';
 const SettingsScreen = (props) => {
     const isFocused = useIsFocused();
 
+    const logOutUser = () => {
+        //log out the user and send them back to the login page
+        props.navigation.navigate('Login');
+    }
+
     return (
 	<LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
         {isFocused ? <StatusBar barStyle="light-content" /> : null}
@@ -42,7 +47,7 @@ const SettingsScreen = (props) => {
                 </TouchableOpacity>
             </ScrollView>
             {/* LOG OUT BUTTON */}
-            <TouchableOpacity style={[globalStyles.toBottom, globalStyles.centerColumn, settingsStyles.logOutBtn, {marginTop: 15}]}>
+            <TouchableOpacity onPress={() => logOutUser()} style={[globalStyles.toBottom, globalStyles.centerColumn, settingsStyles.logOutBtn, {marginTop: 15}]}>
                 <Text style={[globalStyles.btnTextWhite, {fontSize: size(16)}]}>{props.lang('settings_logout')}</Text>
             </TouchableOpacity>
         </View>

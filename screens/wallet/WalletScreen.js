@@ -23,7 +23,7 @@ const WalletScreen = (props) => {
 			<TabTitle navigation={props.navigation} title={props.lang('wallet')} color={'white'} icon={'qr-icon'}/>
 			<View style={[globalStyles.w100, globalStyles.plr20, globalStyles.topColumn, globalStyles.card, {flexGrow: 1}]}>
 				{/* BALANCE TEXT */}
-				<Text style={[walletStyles.balance_numbers, globalStyles.toLeft]}>$34.98</Text>
+				<Text style={[walletStyles.balance_numbers, globalStyles.toLeft]}>$1,976.98</Text>
 				<View style={[globalStyles.centerRow, globalStyles.toLeft, globalStyles.w100]}>
 					{/* ADD MONEY BUTTON */}
 					<TouchableOpacity
@@ -74,10 +74,10 @@ const WalletScreen = (props) => {
 						<Icon name={'card-icon'} size={size(18)} color={appColors.gray}/>
 						<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 					</View>
-					{/* <View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.unlinked_account]}>
+					<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.unlinked_account]}>
 						<Icon name={'plus-icon'} size={size(18)} color={appColors.green}/>
 						<Text style={walletStyles.add_account_text}>{props.lang('link') + ' ' + props.lang('credit_card')}</Text>
-					</View> */}
+					</View>
 				</ScrollView>
 			</View>
 		</LinearGradient>

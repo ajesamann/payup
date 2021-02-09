@@ -28,7 +28,7 @@ const TabTitle = (props) => {
             <Text 
                 style={{
                     fontFamily: "Barlow-Bold",
-                    fontSize: size(35),
+                    fontSize: size(34),
                     color: props.color
                 }}
             >

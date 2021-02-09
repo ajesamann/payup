@@ -5,8 +5,8 @@ import {size} from '../../../global-styles/sizing';
 export const walletStyles = StyleSheet.create({
     //text
     balance_numbers: {
-        fontFamily: 'Barlow-Bold',
-        fontSize: size(32.5),
+        fontFamily: 'Barlow-Medium',
+        fontSize: size(34),
         marginBottom: size(25),
         marginTop: size(25),
         color: appColors.green
