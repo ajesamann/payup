@@ -17,6 +17,10 @@ import { useIsFocused } from '@react-navigation/native';
 const WalletScreen = (props) => {
 	const isFocused = useIsFocused();
 
+	const add_money = () => {
+		props.navigation.navigate('Send Money');
+	}
+
     return (
 		<LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
 			{isFocused ? <StatusBar barStyle="light-content" /> : null}
@@ -64,6 +68,14 @@ const WalletScreen = (props) => {
 				<ScrollView contentContainerStyle={globalStyles.pb30} style={[globalStyles.toLeft, globalStyles.w100, {flex: 1}]}>
 					<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>
 						<Icon name={'bank-icon'} size={size(27)} color={appColors.gray}/>
+						<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
+					</View>
+					<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>
+						<Icon name={'card-icon'} size={size(18)} color={appColors.gray}/>
+						<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
+					</View>
+					<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>
+						<Icon name={'card-icon'} size={size(18)} color={appColors.gray}/>
 						<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 					</View>
 					<View style={[{height: 60}, globalStyles.w100, globalStyles.toLeft, globalStyles.mt20, globalStyles.spreadRow, globalStyles.plr20, walletStyles.linked_account]}>

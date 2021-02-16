@@ -88,6 +88,12 @@ export const globalStyles = StyleSheet.create({
         fontSize: size(14),
         fontFamily: 'Barlow-Medium'
     },
+    btnTextGreen: {
+        color: appColors.green,
+        textAlign: 'center',
+        fontSize: size(14),
+        fontFamily: 'Barlow-Medium'
+    },
     btnTextGray: {
         color: appColors.gray,
         textAlign: 'center',
@@ -311,6 +317,9 @@ export const globalStyles = StyleSheet.create({
     },
     h80: {
         height: "80%"
+    },
+    h90: {
+        height: "90%"
     },
     //links
     linkText: {

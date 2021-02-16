@@ -10,6 +10,7 @@ import QrCodeScreen from '../screens/wallet/QrCodeScreen';
 import LoginScreen from '../screens/login/LoginScreen';
 import TabNavigator from './TabNavigator';
 import TransactionScreen from '../screens/activity/TransactionScreen';
+import SendMoneyScreen from '../screens/money-actions/SendMoneyScreen';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,9 @@ const StackNavigator = (props) => {
         </Stack.Screen>
         <Stack.Screen name="TransactionScreen" options={{ headerShown: false }}>
         {() => <TransactionScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        <Stack.Screen name="Send Money" options={{ headerShown: false }}>
+        {() => <SendMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
     </Stack.Navigator>
     );

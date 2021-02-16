@@ -24,7 +24,7 @@ const QrCodeScreen = (props) => {
 		<NavTitle location={'My Account'} navigation={props.navigation} icon={"arrow-left-icon"} title={props.lang('scan_pay')} color={appColors.primary}/>
         <View style={[globalStyles.w100, globalStyles.plr40, globalStyles.topColumn, {flex: 1, paddingBottom: size(35)}]}>
             <View style={[QRStyles.QRContainer]}>
-                <QRCode codeStyle='dot' content='https://ajesamann.com'/>
+                <QRCode codeStyle='dot' content='https://ajesamann.com' size={size(250)}/>
             </View>
             <View style={[QRStyles.bottomPortion, globalStyles.spreadColumn, globalStyles.w100, globalStyles.pb15, {flex: 1}]}>
                 <View style={globalStyles.mt50}>
