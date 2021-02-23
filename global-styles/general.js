@@ -217,6 +217,9 @@ export const globalStyles = StyleSheet.create({
     pb50: {
         paddingBottom: 50
     },
+    pb40: {
+        paddingBottom: 40
+    },
     pb75: {
         paddingBottom: 75
     },

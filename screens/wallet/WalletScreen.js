@@ -18,7 +18,15 @@ const WalletScreen = (props) => {
 	const isFocused = useIsFocused();
 
 	const add_money = () => {
+		props.navigation.navigate('Add Money');
+	}
+
+	const send_money = () => {
 		props.navigation.navigate('Send Money');
+	}
+
+	const withdraw_money = () => {
+		props.navigation.navigate('Withdraw Money');
 	}
 
     return (
@@ -39,7 +47,7 @@ const WalletScreen = (props) => {
 					{/* WITHDRAW BUTTON */}
 					<TouchableOpacity
 						style={[globalStyles.centerColumn, walletStyles.balanceBtn, globalStyles.ml10]}
-						onPress={() => withdraw()}
+						onPress={() => withdraw_money()}
 					>
 						<Text style={[globalStyles.btnText, {color: 'white'}]}>{props.lang('withdraw')}</Text>
 					</TouchableOpacity>
@@ -48,7 +56,7 @@ const WalletScreen = (props) => {
 					{/* SEND MONEY BUTTON */}
 					<TouchableOpacity
 						style={[globalStyles.centerColumn, walletStyles.interactBtn, globalStyles.mr10]}
-						onPress={() => add_money()}
+						onPress={() => send_money()}
 					>
 						<Text style={[globalStyles.btnText, {color: 'white'}]}>{props.lang('send_money')}</Text>
 					</TouchableOpacity>
