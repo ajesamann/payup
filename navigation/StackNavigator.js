@@ -2,6 +2,7 @@ import React from 'react';
 //navigation
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 //screens
 import CreateAccountScreen from '../screens/create-account/CreateAccountScreen';
 import ForgotPasswordScreen from '../screens/forgot-password/ForgotPasswordScreen';
@@ -13,6 +14,8 @@ import TransactionScreen from '../screens/activity/TransactionScreen';
 import AddMoneyScreen from '../screens/money-actions/AddMoneyScreen';
 import SendMoneyScreen from '../screens/money-actions/SendMoneyScreen';
 import WithdrawMoneyScreen from '../screens/money-actions/WithdrawMoneyScreen';
+import RequestMoneyScreen from '../screens/money-actions/RequestMoneyScreen';
+import NumberPadScreen from '../screens/number-pad/NumberPadScreen';
 
 const Stack = createStackNavigator();
 
@@ -47,11 +50,18 @@ const StackNavigator = (props) => {
         <Stack.Screen name="Send Money" options={{ headerShown: false }}>
         {() => <SendMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
+        <Stack.Screen name="Request Money" options={{ headerShown: false }}>
+        {() => <RequestMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
         <Stack.Screen name="Withdraw Money" options={{ headerShown: false }}>
         {() => <WithdrawMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="QR" options={{ headerShown: false }}>
         {() => <QrCodeScreen navigation={useNavigation()} lang={props.lang}/>}
+        </Stack.Screen>
+        {/* number pad screen */}
+        <Stack.Screen name="Number Pad" options={{ headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS}}>
+        {() => <NumberPadScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
     </Stack.Navigator>
     );

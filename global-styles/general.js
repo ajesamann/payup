@@ -223,6 +223,22 @@ export const globalStyles = StyleSheet.create({
     pb75: {
         paddingBottom: 75
     },
+    ptb75: {
+        paddingTop: 75,
+        paddingBottom: 75
+    },
+    ptb60: {
+        paddingTop: 60,
+        paddingBottom: 60
+    },
+    ptb50: {
+        paddingTop: 50,
+        paddingBottom: 50
+    },
+    ptb40: {
+        paddingTop: 40,
+        paddingBottom: 40
+    },
     ptb30: {
         paddingTop: 30,
         paddingBottom: 30

@@ -18,6 +18,10 @@ import { useIsFocused } from '@react-navigation/native';
 const WithdrawMoneyScreen = (props) => {
     const isFocused = useIsFocused();
 
+    const navigate = (location) => {
+        props.navigation.navigate(location)
+    }
+
     return (
         <LinearGradient colors={[appColors.green, appColors.green]} style={globalStyles.centerMax}>
         {isFocused ? <StatusBar barStyle="light-content" /> : null}
@@ -32,12 +36,11 @@ const WithdrawMoneyScreen = (props) => {
                     </Text>
                 </View>
                 <View style={[globalStyles.w100, globalStyles.centerColumn]}>
-                    <TextInput
-                        style={[moneyActions.moneyInput, {color: 'white'}]}
-                        onChangeText={text => onChangeText(text)}
-                        placeholder="$0.00"
-                        placeholderTextColor="white"
-                    />
+                    <TouchableOpacity onPress={() => navigate('Number Pad')}>
+                        <Text
+                            style={[moneyActions.moneyInput, {color: 'white'}]}
+                        >$0.00</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={[globalStyles.w100]}>
                     <DropDownPicker

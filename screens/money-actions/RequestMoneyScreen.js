@@ -15,7 +15,7 @@ import Icon from '../../assets/icons/Icons.js'
 //nav
 import { useIsFocused } from '@react-navigation/native';
 
-const SendMoneyScreen = (props) => {
+const RequestMoneyScreen = (props) => {
     const isFocused = useIsFocused();
 
     const navigate = (location) => {
@@ -25,7 +25,7 @@ const SendMoneyScreen = (props) => {
     return (
 	<LinearGradient colors={[appColors.green, appColors.green]} style={globalStyles.centerMax}>
         {isFocused ? <StatusBar barStyle="light-content" /> : null}
-		<NavTitle location={'My Account'} navigation={props.navigation} icon={"arrow-left-icon"} title={props.lang('send')} color={'white'}/>
+		<NavTitle location={'My Account'} navigation={props.navigation} icon={"arrow-left-icon"} title={props.lang('request')} color={'white'}/>
         <View style={[globalStyles.w100, globalStyles.plr20, globalStyles.pt30, globalStyles.pb40, globalStyles.spreadColumn, globalStyles.card, {flexGrow: 1}]}>
             <TouchableOpacity onPress={() => navigate('Number Pad')}>
                 <Text
@@ -35,7 +35,7 @@ const SendMoneyScreen = (props) => {
             <View style={[globalStyles.w100]}>
                 <TextInput
                     style={[moneyActions.sendMoneyTo, {color: appColors.gray}]}
-                    placeholder="To"
+                    placeholder="User"
                     placeholderTextColor={appColors.gray}
                 />
                 <TextInput
@@ -47,11 +47,11 @@ const SendMoneyScreen = (props) => {
                 />
             </View>
             <TouchableOpacity style={[moneyActions.sendBtn, globalStyles.centerColumn]}>
-                <Text style={[globalStyles.btnTextWhite, {fontSize: size(15), fontFamily: 'Barlow-Bold'}]}>{props.lang('send_money')}</Text>
+                <Text style={[globalStyles.btnTextWhite, {fontSize: size(15), fontFamily: 'Barlow-Bold'}]}>{props.lang('request_money')}</Text>
             </TouchableOpacity>
         </View>
 	</LinearGradient>
     );
 };
 
-export default SendMoneyScreen;
+export default RequestMoneyScreen;

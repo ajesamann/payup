@@ -17,16 +17,8 @@ import { useIsFocused } from '@react-navigation/native';
 const WalletScreen = (props) => {
 	const isFocused = useIsFocused();
 
-	const add_money = () => {
-		props.navigation.navigate('Add Money');
-	}
-
-	const send_money = () => {
-		props.navigation.navigate('Send Money');
-	}
-
-	const withdraw_money = () => {
-		props.navigation.navigate('Withdraw Money');
+	const navigate = (location) => {
+		props.navigation.navigate(location);
 	}
 
     return (
@@ -40,14 +32,14 @@ const WalletScreen = (props) => {
 					{/* ADD MONEY BUTTON */}
 					<TouchableOpacity
 						style={[globalStyles.centerColumn, walletStyles.balanceBtn, globalStyles.mr10]}
-						onPress={() => add_money()}
+						onPress={() => navigate('Add Money')}
 					>
 						<Text style={[globalStyles.btnText, {color: 'white'}]}>{props.lang('add_money')}</Text>
 					</TouchableOpacity>
 					{/* WITHDRAW BUTTON */}
 					<TouchableOpacity
 						style={[globalStyles.centerColumn, walletStyles.balanceBtn, globalStyles.ml10]}
-						onPress={() => withdraw_money()}
+						onPress={() => navigate('Withdraw Money')}
 					>
 						<Text style={[globalStyles.btnText, {color: 'white'}]}>{props.lang('withdraw')}</Text>
 					</TouchableOpacity>
@@ -56,14 +48,14 @@ const WalletScreen = (props) => {
 					{/* SEND MONEY BUTTON */}
 					<TouchableOpacity
 						style={[globalStyles.centerColumn, walletStyles.interactBtn, globalStyles.mr10]}
-						onPress={() => send_money()}
+						onPress={() => navigate('Send Money')}
 					>
 						<Text style={[globalStyles.btnText, {color: 'white'}]}>{props.lang('send_money')}</Text>
 					</TouchableOpacity>
 					{/* REQUEST MONEY BUTTON */}
 					<TouchableOpacity
 						style={[globalStyles.centerColumn, walletStyles.interactBtn, globalStyles.ml10]}
-						onPress={() => withdraw()}
+						onPress={() => navigate('Request Money')}
 					>
 						<Text style={[globalStyles.btnText, {color: 'white'}]}>{props.lang('request_money')}</Text>
 					</TouchableOpacity>
