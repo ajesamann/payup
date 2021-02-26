@@ -16,6 +16,43 @@ import Icon from '../../assets/icons/Icons.js'
 import { useIsFocused } from '@react-navigation/native';
 
 const NumberPadScreen = (props) => {
+    const [number, onChangeNumber] = React.useState('0');
+
+    const updateNumber = (newNumber) => {
+        if(number == '0' && newNumber != '.' && newNumber){
+        //update the first number
+            onChangeNumber(newNumber);
+        }else if(number == '0' && newNumber == '.'){
+        //don't do anything if they try to hit the decimal before a number
+            null;
+        }else if(!newNumber){
+        //for the delete or backspace button
+            let updatedNumber;
+            if(number.length == 1){
+                updatedNumber = '0'
+            }else{
+                updatedNumber = number.slice(0, -1)
+            }
+            onChangeNumber(updatedNumber)
+        }else if(newNumber == '.'){
+        //don't allow more than one decimal
+            if(number.indexOf('.') !== -1){
+                null;
+            }else{
+                onChangeNumber(number + newNumber);
+            }
+        }else{
+        //prevent more than two numbers behind the decimal
+            var numArray = [...number]
+            numArray.splice(0, numArray.indexOf('.'))
+            if(numArray.length == 3){
+                null;
+            }else{
+                onChangeNumber(number + newNumber);
+            }
+        }
+    }
+
     const isFocused = useIsFocused();
 
     const goBack = () => {
@@ -28,55 +65,55 @@ const NumberPadScreen = (props) => {
         <View style={[globalStyles.spreadColumn, globalStyles.w100, globalStyles.h100, globalStyles.ptb60]}>
             {/* money amount */}
             <View style={[globalStyles.mt30]}>
-                <Text style={[numberPad.amount]}>$0</Text>
+                <Text style={[numberPad.amount]}>${number}</Text>
             </View>
             {/* number pad area */}
             <View style={[globalStyles.w100, globalStyles.centerColumn]}>
                 {/* top */}
                 <View style={[globalStyles.w100, globalStyles.spreadRow]}>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('1')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>1</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('2')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>2</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('3')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>3</Text>
                     </TouchableOpacity>
                 </View>
                 {/* middle 1*/}
                 <View style={[globalStyles.w100, globalStyles.spreadRow]}>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('4')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>4</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('5')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>5</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('6')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>6</Text>
                     </TouchableOpacity>
                 </View>
                 {/* middle 2*/}
                 <View style={[globalStyles.w100, globalStyles.spreadRow]}>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('7')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>7</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('8')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>8</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('9')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>9</Text>
                     </TouchableOpacity>
                 </View>
                 {/* bottom */}
                 <View style={[globalStyles.w100, globalStyles.spreadRow]}>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber()} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}><Icon name={'back-icon'} size={size(20)} color={'white'}/></Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('0')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>0</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
+                    <TouchableOpacity onPress={() => updateNumber('.')} style={[{width: size(100), height: size(75)}, globalStyles.centerColumn]}>
                         <Text style={numberPad.numbers}>.</Text>
                     </TouchableOpacity>
                 </View>
