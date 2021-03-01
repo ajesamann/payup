@@ -32,7 +32,7 @@ const TabNavigator = (props) => {
               iconName = 'history-icon';
             }
             
-            return <Icon name={iconName} size={focused ? 34 : 26} color={color}/>;
+            return <Icon name={iconName} size={26} color={color}/>;
           },
         })}
         tabBarOptions={{

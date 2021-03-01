@@ -35,14 +35,14 @@ const RequestMoneyScreen = (props) => {
             <View style={[globalStyles.w100]}>
                 <TextInput
                     style={[moneyActions.sendMoneyTo, {color: appColors.gray}]}
-                    placeholder="User"
+                    placeholder="Users @"
                     placeholderTextColor={appColors.gray}
                 />
                 <TextInput
                     style={[moneyActions.sendMoneyNote, {color: appColors.gray}]}
                     multiline={true}
                     maxLength={124}
-                    placeholder="Send a note"
+                    placeholder="Send a request note"
                     placeholderTextColor={appColors.gray}
                 />
             </View>

@@ -43,6 +43,7 @@ const StackNavigator = (props) => {
         <Stack.Screen name="TransactionScreen" options={{ headerShown: false }}>
         {() => <TransactionScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
+
         {/* wallet screens */}
         <Stack.Screen name="Add Money" options={{ headerShown: false }}>
         {() => <AddMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
@@ -59,6 +60,7 @@ const StackNavigator = (props) => {
         <Stack.Screen name="QR" options={{ headerShown: false }}>
         {() => <QrCodeScreen navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
+        
         {/* number pad screen */}
         <Stack.Screen name="Number Pad" options={{ headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS}}>
         {() => <NumberPadScreen navigation={useNavigation()} lang={props.lang}/>}

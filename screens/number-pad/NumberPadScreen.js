@@ -29,11 +29,28 @@ const NumberPadScreen = (props) => {
         //for the delete or backspace button
             let updatedNumber;
             if(number.length == 1){
-                updatedNumber = '0'
+                updatedNumber = '0';
+                onChangeNumber(updatedNumber)
+            }else if(number.indexOf('.') !== -1){
+                updatedNumber = number.slice(0, -1)
+                onChangeNumber(updatedNumber)
+            }else if(number.length == 5){
+                //logic for the commas
+                updatedNumber = [...number];
+                updatedNumber.splice(number.indexOf(','), 1);
+                updatedNumber.pop();
+                onChangeNumber(updatedNumber.join(''))
+            }else if(number.length == 6){
+                //logic for the commas
+                updatedNumber = [...number];
+                updatedNumber.pop();
+                updatedNumber.splice(number.indexOf(','), 1);
+                updatedNumber.splice(1, 0, ',');
+                onChangeNumber(updatedNumber.join(''))
             }else{
                 updatedNumber = number.slice(0, -1)
+                onChangeNumber(updatedNumber)
             }
-            onChangeNumber(updatedNumber)
         }else if(newNumber == '.'){
         //don't allow more than one decimal
             if(number.indexOf('.') !== -1){
@@ -42,10 +59,21 @@ const NumberPadScreen = (props) => {
                 onChangeNumber(number + newNumber);
             }
         }else{
-        //prevent more than two numbers behind the decimal
-            var numArray = [...number]
-            numArray.splice(0, numArray.indexOf('.'))
-            if(numArray.length == 3){
+        //prevent more than two numbers behind the decimal && prevent more than 5 digits before the decimal && add commas correctly
+            var numArray = [...number];
+            numArray.splice(0, numArray.indexOf('.'));
+            if(numArray.length == 3 && number.indexOf('.') !== -1){
+                null;
+            }else if(numArray.length == 3){
+                numArray.splice(1, 0, ',');
+                numArray.push(newNumber);
+                onChangeNumber(numArray.join(''))
+            }else if(numArray.length == 5){
+                numArray.splice(1, 1);
+                numArray.splice(2, 0, ',');
+                numArray.push(newNumber);
+                onChangeNumber(numArray.join(''))
+            }else if(numArray.length == 6){
                 null;
             }else{
                 onChangeNumber(number + newNumber);
