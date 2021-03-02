@@ -1,5 +1,5 @@
 //react
-import React from 'react';
+import React, { useEffect } from 'react';
 import {View, Text, TouchableOpacity, StatusBar, TextInput} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 //styles
@@ -16,8 +16,8 @@ import Icon from '../../assets/icons/Icons.js'
 import { useIsFocused } from '@react-navigation/native';
 
 const NumberPadScreen = (props) => {
-    const [number, onChangeNumber] = React.useState('0');
-
+    const [number, onChangeNumber] = React.useState(props.route.params.amount);
+    //actual number pad logic
     const updateNumber = (newNumber) => {
         if(number == '0' && newNumber != '.' && newNumber){
         //update the first number
@@ -87,6 +87,27 @@ const NumberPadScreen = (props) => {
         props.navigation.goBack();
     }
 
+    const sendAmount = () => {
+        let numArray = [...number];
+        if(numArray.indexOf('.') !== -1){
+            let decimalNum = numArray.splice(numArray.indexOf('.'), numArray.length - 1);
+        
+            //if there is only one number after the decimal add a 0 to the end
+            if(decimalNum.length == 2){
+                onChangeNumber(number + '0');
+                props.navigation.navigate(props.route.params.screen, { amount: number + '0' })
+            //if there are no numbers after the decimal remove it
+            }else if(decimalNum.length == 1){
+                onChangeNumber(number.slice(0, -1))
+                props.navigation.navigate(props.route.params.screen, { amount: number.slice(0, -1) })
+            }else{
+                null;
+            }
+        }else{
+            null;
+        }
+    }
+
     return (
 	<LinearGradient colors={[appColors.black, appColors.black]} style={globalStyles.centerMax}>
         {isFocused ? <StatusBar barStyle="light-content" /> : null}
@@ -151,7 +172,7 @@ const NumberPadScreen = (props) => {
                 <TouchableOpacity onPress={() => goBack()} style={[{flex: 1}, globalStyles.centerColumn, numberPad.backBtn]}>
                     <Icon name={'arrow-left-icon'} size={size(22)} color={appColors.gray}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={[{flex: 2}, globalStyles.centerColumn, numberPad.finishedBtn]}>
+                <TouchableOpacity onPress={() => sendAmount()} style={[{flex: 2}, globalStyles.centerColumn, numberPad.finishedBtn]}>
                     <Icon name={'arrow-right-icon'} size={size(22)} color={'white'}/>
                 </TouchableOpacity>
             </View>

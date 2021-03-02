@@ -1,6 +1,6 @@
 import React from 'react';
 //navigation
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { CardStyleInterpolators } from '@react-navigation/stack';
 //screens
@@ -24,46 +24,46 @@ const StackNavigator = (props) => {
     <Stack.Navigator initialRouteName="Login">
         {/* screens before user is logged in */}
         <Stack.Screen name="Login" options={{ headerShown: false }}>
-        {() => <LoginScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <LoginScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="UserLoggedIn" options={{ headerShown: false }}>
-        {() => <TabNavigator navigation={useNavigation()} lang={props.lang}/>}
+        {() => <TabNavigator route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Forgot Password" options={{ headerShown: false }}>
-        {() => <ForgotPasswordScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <ForgotPasswordScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Create Account" options={{ headerShown: false }}>
-        {() => <CreateAccountScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <CreateAccountScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
 
         {/* logged in screens */}
         <Stack.Screen name="Settings" options={{ headerShown: false }}>
-        {() => <SettingsScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <SettingsScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="TransactionScreen" options={{ headerShown: false }}>
-        {() => <TransactionScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <TransactionScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
 
         {/* wallet screens */}
         <Stack.Screen name="Add Money" options={{ headerShown: false }}>
-        {() => <AddMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <AddMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Send Money" options={{ headerShown: false }}>
-        {() => <SendMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <SendMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Request Money" options={{ headerShown: false }}>
-        {() => <RequestMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <RequestMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Withdraw Money" options={{ headerShown: false }}>
-        {() => <WithdrawMoneyScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <WithdrawMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="QR" options={{ headerShown: false }}>
-        {() => <QrCodeScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <QrCodeScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
         
         {/* number pad screen */}
         <Stack.Screen name="Number Pad" options={{ headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS}}>
-        {() => <NumberPadScreen navigation={useNavigation()} lang={props.lang}/>}
+        {() => <NumberPadScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
         </Stack.Screen>
     </Stack.Navigator>
     );

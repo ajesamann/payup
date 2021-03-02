@@ -18,8 +18,10 @@ import { useIsFocused } from '@react-navigation/native';
 const RequestMoneyScreen = (props) => {
     const isFocused = useIsFocused();
 
+    const number = props.route.params == undefined ? '0' : props.route.params.amount;
+
     const navigate = (location) => {
-        props.navigation.navigate(location)
+        props.navigation.navigate(location, { screen: 'Request Money', amount: props.route.params == undefined ? '0' : props.route.params.amount })
     }
 
     return (
@@ -30,7 +32,7 @@ const RequestMoneyScreen = (props) => {
             <TouchableOpacity onPress={() => navigate('Number Pad')}>
                 <Text
                     style={[moneyActions.moneyInput, {color: appColors.green}]}
-                >$0.00</Text>
+                >${number}</Text>
             </TouchableOpacity>
             <View style={[globalStyles.w100]}>
                 <TextInput
