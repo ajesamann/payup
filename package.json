@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -16,10 +17,12 @@
   },
   "dependencies": {
     "@react-native-firebase/app": "^10.1.0",
+    "@react-native-firebase/firestore": "^10.8.1",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "i18n-js": "^3.8.0",
+    "js-base64": "^3.6.0",
     "lodash.memoize": "^4.1.2",
     "mobx": "^6.0.4",
     "react": "16.13.1",

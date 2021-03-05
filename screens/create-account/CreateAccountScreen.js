@@ -1,5 +1,8 @@
 import React from 'react';
 import {View, TextInput, TouchableOpacity, Text, StatusBar} from 'react-native';
+import { Base64 } from 'js-base64';
+//api
+import * as fetchUsers from '../../api/usersApi';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
@@ -12,9 +15,17 @@ const CreateAccountScreen = (props) => {
     const [password, onChangePassword] = React.useState();
     const [confirmPassword, onChangeConfirmPassword] = React.useState();
   
-    const login = () => {
-      //send a get to the api and log the user in
-      props.navigation.navigate('UserLoggedIn');
+    const createAccount = () => {
+        //grab the input info from user and send to firebase, then send to confirm account page
+        let encryptedPassword = Base64.encode(password);
+
+        let newUser = {
+            username,
+            email,
+            password: encryptedPassword,
+        }
+
+        fetchUsers.addUser(newUser)
     }
   
       return (
@@ -42,6 +53,7 @@ const CreateAccountScreen = (props) => {
                         onChangeText={password => onChangePassword(password)}
                         value={password}
                         placeholder={props.lang('password')}
+                        secureTextEntry={true}
                     />
                     {/* CONFIRM PASSWORD INPUT */}
                     <TextInput
@@ -49,9 +61,11 @@ const CreateAccountScreen = (props) => {
                         onChangeText={confirmPassword => onChangeConfirmPassword(confirmPassword)}
                         value={confirmPassword}
                         placeholder={props.lang('confirm_password')}
+                        secureTextEntry={true}
                     />
                     {/* CREATE ACCOUNT BUTTON */}
                     <TouchableOpacity
+                        onPress={() => createAccount()}
                         style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, , globalStyles.mt20]}
                     >
                         <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('create_account')}</Text>
