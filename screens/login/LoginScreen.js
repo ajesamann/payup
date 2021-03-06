@@ -1,6 +1,8 @@
 //react
 import React from 'react';
 import {View, TextInput, Text, TouchableOpacity, Image, StatusBar} from 'react-native';
+//api
+import * as fetchUsers from '../../api/usersApi';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
@@ -9,6 +11,7 @@ import {appColors} from '../../global-styles/colors';
 import {size} from '../../global-styles/sizing'
 //icons
 import Icon from '../../assets/icons/Icons.js';
+import { Base64 } from 'js-base64';
 
 const LoginScreen = (props) => {
   const [username, onChangeUsername] = React.useState();
@@ -17,7 +20,23 @@ const LoginScreen = (props) => {
 
   const login = () => {
     //send a get to the api and log the user in
-    props.navigation.navigate('UserLoggedIn');
+
+	fetchUsers.getTargetedUser('username', '==', username, password)
+		.then(data => {
+			if(data != false){
+				//check the passwords from data and if they match log them in and start session
+				let decodedPassword = Base64.decode(data.password)
+				if(decodedPassword === password){
+					props.navigation.navigate('UserLoggedIn');
+				}else{
+					console.log('User not found')
+				}
+			}else if(data === false){
+				//no user was found
+				console.log('User not found');
+			}
+		});
+	
   }
 
     return (
@@ -40,6 +59,7 @@ const LoginScreen = (props) => {
 					onChangeText={password => onChangePassword(password)}
 					value={password}
 					placeholder={props.lang('password')}
+					secureTextEntry={true}
 				/>
 				<View style={[globalStyles.spreadRow, globalStyles.mt20, globalStyles.w100]}>
 					{/* REMEMBER ME CHECKBOX */}
