@@ -1,8 +1,8 @@
 import firestore from '@react-native-firebase/firestore';
 
-export function addUser(user){
+export async function addUser(user){
 
-    firestore().collection('users').add(user)
+    await firestore().collection('users').add(user)
         .then((data) => {
             console.log(data)
         })
