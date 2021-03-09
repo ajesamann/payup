@@ -1,8 +1,11 @@
 import React from 'react';
 import {View, TextInput, TouchableOpacity, Text, StatusBar} from 'react-native';
-import { Base64 } from 'js-base64';
+//encryption
+import bcrypt from 'react-native-bcrypt';
 //api
 import * as fetchUsers from '../../api/usersApi';
+//redux
+import { connect } from 'react-redux';
 //styles
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
@@ -17,18 +20,49 @@ const CreateAccountScreen = (props) => {
   
     const createAccount = () => {
         //grab the input info from user and send to firebase, then send to confirm account page
-        let encryptedPassword = Base64.encode(password);
-
-        let newUser = {
-            username,
-            email,
-            password: encryptedPassword,
+        if(!password){
+            //toggle alert
+            props.dispatch({
+                type: 'TOGGLE_ALERT',
+                payload: props.lang('something_went_wrong'),
+                color: appColors.error
+            });
+        }else{
+            bcrypt.genSalt(10, (err, salt) => {
+                if(err){
+                    console.log(err)
+                }else{
+                    bcrypt.hash(password, salt, (err, hash) => {
+                        // Store hash in your password DB.
+                        if(err){
+                            console.log(err)
+                        }else{
+                            let newUser = {
+                                username,
+                                email,
+                                password: hash,
+                            }
+        
+                            fetchUsers.addUser(newUser)
+                                .then(() => {
+                                    //toggle alert
+                                    props.dispatch({
+                                        type: 'TOGGLE_ALERT',
+                                        payload: props.lang('account_created_success'),
+                                        color: appColors.green
+                                    });
+                                    setTimeout(() => {
+                                        props.dispatch({type: 'TOGGLE_ALERT'})
+                                    }, 2000)
+                                })
+                        }
+                    });
+                }
+            });
         }
-
-        fetchUsers.addUser(newUser)
     }
   
-      return (
+    return (
         <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
 		    <StatusBar barStyle="light-content" />
             <View style={[globalStyles.h100, globalStyles.centerColumn, globalStyles.w75]}>
@@ -82,7 +116,12 @@ const CreateAccountScreen = (props) => {
                 </View>
             </View>
         </LinearGradient>
-      );
-  };
+    );
+};
 
-export default CreateAccountScreen;
+const mapStateToProps = (state) => {
+    const { alert } = state
+    return { alert }
+};
+
+export default connect(mapStateToProps)(CreateAccountScreen);

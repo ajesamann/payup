@@ -46,5 +46,7 @@
     "my_code": "My Code",
     "scan_code": "Scan a code",
     "scan_pay": "Scan & Pay",
-    "deposit_money": "Deposit money"
+    "deposit_money": "Deposit money",
+    "account_created_success": "Account created successfully",
+    "something_went_wrong": "Oops something went wrong"
 }

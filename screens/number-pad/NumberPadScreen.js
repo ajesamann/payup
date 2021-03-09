@@ -89,9 +89,9 @@ const NumberPadScreen = (props) => {
 
     const sendAmount = () => {
         let numArray = [...number];
+
         if(numArray.indexOf('.') !== -1){
             let decimalNum = numArray.splice(numArray.indexOf('.'), numArray.length - 1);
-        
             //if there is only one number after the decimal add a 0 to the end
             if(decimalNum.length == 2){
                 onChangeNumber(number + '0');
@@ -101,10 +101,10 @@ const NumberPadScreen = (props) => {
                 onChangeNumber(number.slice(0, -1))
                 props.navigation.navigate(props.route.params.screen, { amount: number.slice(0, -1) })
             }else{
-                null;
+                props.navigation.navigate(props.route.params.screen, { amount: number })
             }
         }else{
-            null;
+            props.navigation.navigate(props.route.params.screen, { amount: number })
         }
     }
 

@@ -397,6 +397,30 @@ export const globalStyles = StyleSheet.create({
     full_card: {
         backgroundColor: 'white',
         borderRadius: 20,
-    }
+    },
+    //notifcations
+    notification: {
+        position: 'absolute',
+        backgroundColor: appColors.black,
+        height: size(55),
+        width: '90%',
+        borderRadius: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        shadowOpacity: .5,
+        shadowRadius: 5,
+
+        elevation: 10,
+        },
+        notifShape: {
+            width: 10,
+            borderTopLeftRadius: 5,
+            borderBottomLeftRadius: 5,
+            height: '100%',
+            backgroundColor: appColors.green
+        },
 })
   

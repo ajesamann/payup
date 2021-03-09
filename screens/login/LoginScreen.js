@@ -1,6 +1,10 @@
 //react
 import React from 'react';
 import {View, TextInput, Text, TouchableOpacity, Image, StatusBar} from 'react-native';
+//redux
+import { connect } from 'react-redux';
+//encryption
+import bcrypt from 'react-native-bcrypt';
 //api
 import * as fetchUsers from '../../api/usersApi';
 //styles
@@ -11,7 +15,6 @@ import {appColors} from '../../global-styles/colors';
 import {size} from '../../global-styles/sizing'
 //icons
 import Icon from '../../assets/icons/Icons.js';
-import { Base64 } from 'js-base64';
 
 const LoginScreen = (props) => {
   const [username, onChangeUsername] = React.useState();
@@ -25,19 +28,20 @@ const LoginScreen = (props) => {
 		.then(data => {
 			if(data != false){
 				//check the passwords from data and if they match log them in and start session
-				let decodedPassword = Base64.decode(data.password)
-				if(decodedPassword === password){
-					props.navigation.navigate('UserLoggedIn');
-				}else{
-					console.log('User not found')
-				}
+				bcrypt.compare(password, data.password, (err, res) => {
+					if(res == true){
+						props.navigation.navigate('UserLoggedIn');
+					}else{
+						console.log('User not found')
+					}
+				});
 			}else if(data === false){
 				//no user was found
 				console.log('User not found');
 			}
 		});
 	
-  }
+  	}
 
     return (
       <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
@@ -98,4 +102,9 @@ const LoginScreen = (props) => {
     );
 };
 
-export default LoginScreen;
+const mapStateToProps = (state) => {
+    const { alert } = state
+    return { alert }
+};
+
+export default connect(mapStateToProps)(LoginScreen);
