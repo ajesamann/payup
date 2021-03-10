@@ -24,46 +24,46 @@ const StackNavigator = (props) => {
     <Stack.Navigator initialRouteName="Login">
         {/* screens before user is logged in */}
         <Stack.Screen name="Login" options={{ headerShown: false }}>
-        {() => <LoginScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <LoginScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="UserLoggedIn" options={{ headerShown: false }}>
-        {() => <TabNavigator route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <TabNavigator route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Forgot Password" options={{ headerShown: false }}>
-        {() => <ForgotPasswordScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <ForgotPasswordScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Create Account" options={{ headerShown: false }}>
-        {() => <CreateAccountScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <CreateAccountScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
 
         {/* logged in screens */}
         <Stack.Screen name="Settings" options={{ headerShown: false }}>
-        {() => <SettingsScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <SettingsScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="TransactionScreen" options={{ headerShown: false }}>
-        {() => <TransactionScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <TransactionScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
 
         {/* wallet screens */}
         <Stack.Screen name="Add Money" options={{ headerShown: false }}>
-        {() => <AddMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <AddMoneyScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Send Money" options={{ headerShown: false }}>
-        {() => <SendMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <SendMoneyScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Request Money" options={{ headerShown: false }}>
-        {() => <RequestMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <RequestMoneyScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Withdraw Money" options={{ headerShown: false }}>
-        {() => <WithdrawMoneyScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <WithdrawMoneyScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="QR" options={{ headerShown: false }}>
-        {() => <QrCodeScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <QrCodeScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         
         {/* number pad screen */}
         <Stack.Screen name="Number Pad" options={{ headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS}}>
-        {() => <NumberPadScreen route={useRoute()} navigation={useNavigation()} lang={props.lang}/>}
+        {() => <NumberPadScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
     </Stack.Navigator>
     );

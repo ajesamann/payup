@@ -22,11 +22,7 @@ const CreateAccountScreen = (props) => {
         //grab the input info from user and send to firebase, then send to confirm account page
         if(!password){
             //toggle alert
-            props.dispatch({
-                type: 'TOGGLE_ALERT',
-                payload: props.lang('something_went_wrong'),
-                color: appColors.error
-            });
+            props.showAlert(appColors.error, props.lang('something_went_wrong'));
         }else{
             bcrypt.genSalt(10, (err, salt) => {
                 if(err){
@@ -46,14 +42,7 @@ const CreateAccountScreen = (props) => {
                             fetchUsers.addUser(newUser)
                                 .then(() => {
                                     //toggle alert
-                                    props.dispatch({
-                                        type: 'TOGGLE_ALERT',
-                                        payload: props.lang('account_created_success'),
-                                        color: appColors.green
-                                    });
-                                    setTimeout(() => {
-                                        props.dispatch({type: 'TOGGLE_ALERT'})
-                                    }, 2000)
+                                    props.showAlert(appColors.green, props.lang('account_created_success'));
                                 })
                         }
                     });
@@ -109,7 +98,7 @@ const CreateAccountScreen = (props) => {
                     {/* BACK TO LOGIN - STACK BUTTON */}
                     <TouchableOpacity
                         style={globalStyles.centerRow}
-                        onPress={() => {props.navigation.navigate('Login')}}
+                        onPress={() => {props.navigation.navigate('Login'), props.dispatch({ type: 'ALERT_OFF' })}}
                     >
                         <Text style={[globalStyles.wtext, {fontSize: size(13)}]}>{props.lang('back_to_login')}</Text>
                     </TouchableOpacity>

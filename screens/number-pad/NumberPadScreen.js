@@ -170,7 +170,7 @@ const NumberPadScreen = (props) => {
             {/* button area */}
             <View style={[globalStyles.w100, globalStyles.plr20, globalStyles.centerRow]}>
                 <TouchableOpacity onPress={() => goBack()} style={[{flex: 1}, globalStyles.centerColumn, numberPad.backBtn]}>
-                    <Icon name={'arrow-left-icon'} size={size(22)} color={appColors.gray}/>
+                    <Icon name={'arrow-left-icon'} size={size(22)} color={'white'}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => sendAmount()} style={[{flex: 2}, globalStyles.centerColumn, numberPad.finishedBtn]}>
                     <Icon name={'arrow-right-icon'} size={size(22)} color={'white'}/>

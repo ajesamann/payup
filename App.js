@@ -4,15 +4,23 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './navigation/StackNavigator'
 //components
-import NotificationPopup from './components/NotificationPopup'
+import AlertPopup from './components/AlertPopup'
 //redux
 import { connect } from 'react-redux';
 
 const App = (props) => {
+	const showAlert = (color, msg) => {
+		props.dispatch({
+			type: 'ALERT_ON',
+			payload: msg,
+			color: color
+		});
+	}
+
 	return(
 		<NavigationContainer>
-			<StackNavigator lang={props.lang}/>
-			{props.alert.show ? <NotificationPopup /> : null}
+			<StackNavigator showAlert={showAlert} lang={props.lang}/>
+			{props.alert.show ? <AlertPopup /> : null}
 		</NavigationContainer>
 	)
 }

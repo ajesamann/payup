@@ -44,7 +44,7 @@ const SendMoneyScreen = (props) => {
                     style={[moneyActions.sendMoneyNote, {color: appColors.gray}]}
                     multiline={true}
                     maxLength={124}
-                    placeholder="Send a note"
+                    placeholder="Add a note"
                     placeholderTextColor={appColors.gray}
                 />
             </View>

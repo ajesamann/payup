@@ -14,7 +14,7 @@ export const numberPad = StyleSheet.create({
         fontSize: size(30)
     },
     backBtn: {
-        backgroundColor: appColors.lightGray,
+        backgroundColor: appColors.error,
         height: size(65),
         borderRadius: 20,
         marginRight: size(7.5)

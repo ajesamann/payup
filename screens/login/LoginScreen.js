@@ -93,7 +93,7 @@ const LoginScreen = (props) => {
 			{/* SIGN UP TEXT */}
 			<View style={globalStyles.centerRow}>
 				<Text style={[globalStyles.linkText, {fontSize: size(13)}]}>{props.lang('first_time') + " "}</Text>
-				<Text style={[globalStyles.linkTextBold, {fontSize: size(13)}]} onPress={() => {props.navigation.navigate('Create Account')}}>
+				<Text style={[globalStyles.linkTextBold, {fontSize: size(13)}]} onPress={() => {props.navigation.navigate('Create Account'), props.dispatch({type: 'ALERT_OFF'})}}>
 					{props.lang('sign_up')}
 				</Text>
 			</View>
