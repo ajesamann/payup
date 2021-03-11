@@ -11,19 +11,23 @@ import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles} from '../../global-styles/general';
 import {appColors} from '../../global-styles/colors';
 import {size} from '../../global-styles/sizing'
+//loader
+import Spinner from 'react-native-spinkit';
 
 const CreateAccountScreen = (props) => {
     const [email, onChangeEmail] = React.useState();
     const [username, onChangeUsername] = React.useState();
     const [password, onChangePassword] = React.useState();
     const [confirmPassword, onChangeConfirmPassword] = React.useState();
+	const [showSpinner, toggleSpinner] = React.useState(false);
   
     const createAccount = () => {
         //grab the input info from user and send to firebase, then send to confirm account page
-        if(!password){
+        if(!password || !username || !email){
             //toggle alert
-            props.showAlert(appColors.error, props.lang('something_went_wrong'));
+            props.showAlert(appColors.error, props.lang('fill_all'));
         }else{
+		    toggleSpinner(true);
             bcrypt.genSalt(10, (err, salt) => {
                 if(err){
                     console.log(err)
@@ -31,7 +35,8 @@ const CreateAccountScreen = (props) => {
                     bcrypt.hash(password, salt, (err, hash) => {
                         // Store hash in your password DB.
                         if(err){
-                            console.log(err)
+		                    toggleSpinner(false);
+                            return;
                         }else{
                             let newUser = {
                                 username,
@@ -42,6 +47,7 @@ const CreateAccountScreen = (props) => {
                             fetchUsers.addUser(newUser)
                                 .then(() => {
                                     //toggle alert
+                                    toggleSpinner(false);
                                     props.showAlert(appColors.green, props.lang('account_created_success'));
                                 })
                         }
@@ -88,10 +94,11 @@ const CreateAccountScreen = (props) => {
                     />
                     {/* CREATE ACCOUNT BUTTON */}
                     <TouchableOpacity
-                        onPress={() => createAccount()}
+                        onPress={() => {props.dispatch({type: 'ALERT_OFF'}), createAccount()}}
                         style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn, , globalStyles.mt20]}
                     >
-                        <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('create_account')}</Text>
+                        <Spinner isVisible={showSpinner} size={size(23)} type={'ThreeBounce'} color={appColors.black}/>
+                        { !showSpinner ? <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('create_account')}</Text> : null}
                     </TouchableOpacity>
                 </View>
                 <View style={[{position: "absolute", bottom: 90}, globalStyles.centerColumn, globalStyles.w100]}>

@@ -15,33 +15,44 @@ import {appColors} from '../../global-styles/colors';
 import {size} from '../../global-styles/sizing'
 //icons
 import Icon from '../../assets/icons/Icons.js';
+//loader
+import Spinner from 'react-native-spinkit';
 
 const LoginScreen = (props) => {
-  const [username, onChangeUsername] = React.useState();
-  const [password, onChangePassword] = React.useState();
-  const [rememberMe, setRememberMe] = React.useState(false);
+  	const [username, onChangeUsername] = React.useState();
+  	const [password, onChangePassword] = React.useState();
+  	const [rememberMe, setRememberMe] = React.useState(false);
+	const [showSpinner, toggleSpinner] = React.useState(false);
 
-  const login = () => {
+  	const login = () => {
     //send a get to the api and log the user in
-
-	fetchUsers.getTargetedUser('username', '==', username, password)
-		.then(data => {
-			if(data != false){
-				//check the passwords from data and if they match log them in and start session
-				bcrypt.compare(password, data.password, (err, res) => {
-					if(res == true){
-						props.navigation.navigate('UserLoggedIn');
-					}else{
-						console.log('User not found')
-					}
-				});
-			}else if(data === false){
-				//no user was found
-				console.log('User not found');
-			}
-		});
-	
-  	}
+	if(!username){
+		props.showAlert(appColors.error, props.lang('username_required'));
+	}else if(!password){
+		props.showAlert(appColors.error, props.lang('password_required'));
+	}else{
+		toggleSpinner(true);
+		fetchUsers.getTargetedUser('username', '==', username)
+			.then(data => {
+				if(data !== false){
+					//check the passwords from data and if they match log them in and start session
+					bcrypt.compare(password, data.password, (err, res) => {
+						if(res === true){
+							toggleSpinner(false);
+							props.navigation.navigate('UserLoggedIn');
+						}else{
+							toggleSpinner(false);
+							props.showAlert(appColors.error, props.lang('user_not_found'));
+						}
+					});
+				}else if(data === false){
+					//no user was found
+					toggleSpinner(false);
+					props.showAlert(appColors.error, props.lang('user_not_found'));
+				}
+			});
+		}
+	}
 
     return (
       <LinearGradient colors={[appColors.primary, appColors.primary]} style={globalStyles.centerMax}>
@@ -57,6 +68,7 @@ const LoginScreen = (props) => {
 					onChangeText={username => onChangeUsername(username)}
 					value={username}
 					placeholder={props.lang('username')}
+					maxLength={64}
 				/>
 				<TextInput
 					style={[globalStyles.stack_input, , globalStyles.w100, {fontSize: size(13)}]}
@@ -64,6 +76,7 @@ const LoginScreen = (props) => {
 					value={password}
 					placeholder={props.lang('password')}
 					secureTextEntry={true}
+					maxLength={64}
 				/>
 				<View style={[globalStyles.spreadRow, globalStyles.mt20, globalStyles.w100]}>
 					{/* REMEMBER ME CHECKBOX */}
@@ -87,7 +100,8 @@ const LoginScreen = (props) => {
 					style={[globalStyles.centerRow, globalStyles.w100, globalStyles.stack_btn]}
 					onPress={() => login()}
 				>
-					<Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('login')}</Text>
+					<Spinner isVisible={showSpinner} size={size(23)} type={'ThreeBounce'} color={appColors.black}/>
+					{ !showSpinner ? <Text style={{color: appColors.primary, fontFamily: 'Barlow-Medium', fontSize: size(13)}}>{props.lang('login')}</Text> : null}
 				</TouchableOpacity>
 			</View>
 			{/* SIGN UP TEXT */}

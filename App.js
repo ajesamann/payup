@@ -9,12 +9,21 @@ import AlertPopup from './components/AlertPopup'
 import { connect } from 'react-redux';
 
 const App = (props) => {
-	const showAlert = (color, msg) => {
-		props.dispatch({
-			type: 'ALERT_ON',
-			payload: msg,
-			color: color
-		});
+	async function showAlert(color, msg){
+		if(props.alert.show){
+			await props.dispatch({ type: 'ALERT_OFF' });
+			props.dispatch({
+				type: 'ALERT_ON',
+				payload: msg,
+				color: color
+			});
+		}else{
+			props.dispatch({
+				type: 'ALERT_ON',
+				payload: msg,
+				color: color
+			});
+		}
 	}
 
 	return(

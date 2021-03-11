@@ -12,7 +12,7 @@ export async function addUser(user){
 
 }
 
-export async function getTargetedUser(queryGroup, operator, queryName, password){
+export async function getTargetedUser(queryGroup, operator, queryName){
 
     return await firestore().collection('users').where(queryGroup, operator, queryName).get()
         .then((data) => {

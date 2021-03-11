@@ -12,7 +12,6 @@ import {size} from '../global-styles/sizing';
 import Icon from '../assets/icons/Icons.js'
 
 const AlertPopup = (props) => {
-
     // slideAnim will be used as the value for opacity. Initial Value: 0
     const slideAnim = useRef(new Animated.Value(-250)).current;
 
@@ -27,22 +26,22 @@ const AlertPopup = (props) => {
     };
 
     const slideOut = () => {
-      // Will change slideAnim value to 0 in 5 seconds
-      Animated.timing(slideAnim, {
-        toValue: -250,
-        duration: 425,
-        useNativeDriver: true,
-      }).start();
+    // Will change slideAnim value to 0 in 5 seconds
+        Animated.timing(slideAnim, {
+            toValue: -250,
+            duration: 425,
+            useNativeDriver: true,
+        }).start();
     };
 
     const animation = () => {
         slideIn();
         setTimeout(() => {
-            slideOut();
-        }, 2500);
+            props.alert.show ? slideOut() : null;
+        }, 2750);
     }
     
-    props.alert ? animation() : null
+    animation();
 
     return (
         <Animated.View style={[globalStyles.centerColumn, globalStyles.w100, {position: 'absolute', top: '12.5%', transform: [{ translateY: slideAnim }]}]}>
