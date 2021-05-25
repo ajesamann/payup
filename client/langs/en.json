@@ -47,11 +47,14 @@
     "scan_code": "Scan a code",
     "scan_pay": "Scan & Pay",
     "deposit_money": "Deposit money",
-    "account_created_success": "Account created successfully",
-    "something_went_wrong": "Oops something went wrong",
-    "user_not_found": "User not found",
-    "username_required": "Username required",
-    "password_required": "Password required",
-    "fill_all": "Fill in all fields"
-
+    "account_created_success": "Account created successfully!",
+    "something_went_wrong": "Oops, something went wrong.",
+    "user_not_found": "User not found!",
+    "username_required": "Username required!",
+    "password_required": "Password required!",
+    "fill_all": "Fill in all fields!",
+    "system_error": "Oops, there was a system error.",
+    "valid_email": "Must be a valid email!",
+    "add_money_error": "Deposit amount must be greater than 0",
+    "deposit_success": "Money deposited successfully"
 }

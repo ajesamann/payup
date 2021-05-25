@@ -39,6 +39,12 @@ const LoginScreen = (props) => {
 					bcrypt.compare(password, data.password, (err, res) => {
 						if(res === true){
 							toggleSpinner(false);
+							//set the users balance accordingly
+							props.dispatch({
+								type: 'ADD_TO_BALANCE',
+								payload: data.balance
+							});
+							//log the user in
 							props.navigation.navigate('UserLoggedIn');
 						}else{
 							toggleSpinner(false);
@@ -50,6 +56,10 @@ const LoginScreen = (props) => {
 					toggleSpinner(false);
 					props.showAlert(appColors.error, props.lang('user_not_found'));
 				}
+			})
+			.catch(error => {
+				props.showAlert(appColors.error, props.lang('something_went_wrong'))
+				toggleSpinner(false);
 			});
 		}
 	}
@@ -117,8 +127,8 @@ const LoginScreen = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    const { alert } = state
-    return { alert }
+	const { alert, balance } = state
+	return { alert, balance }
 };
 
 export default connect(mapStateToProps)(LoginScreen);

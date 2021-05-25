@@ -22,12 +22,14 @@ const Stack = createStackNavigator();
 const StackNavigator = (props) => {
     return (
     <Stack.Navigator initialRouteName="Login">
+        {/* when user is logged in and in the app with a session */}
+        <Stack.Screen name="UserLoggedIn" options={{ headerShown: false }}>
+        {() => <TabNavigator route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
+        </Stack.Screen>
+
         {/* screens before user is logged in */}
         <Stack.Screen name="Login" options={{ headerShown: false }}>
         {() => <LoginScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
-        </Stack.Screen>
-        <Stack.Screen name="UserLoggedIn" options={{ headerShown: false }}>
-        {() => <TabNavigator route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}
         </Stack.Screen>
         <Stack.Screen name="Forgot Password" options={{ headerShown: false }}>
         {() => <ForgotPasswordScreen route={useRoute()} navigation={useNavigation()} showAlert={props.showAlert} lang={props.lang}/>}

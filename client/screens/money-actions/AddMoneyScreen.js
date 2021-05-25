@@ -14,14 +14,31 @@ import NavTitle from '../../components/NavTitle';
 import Icon from '../../assets/icons/Icons.js'
 //nav
 import { useIsFocused } from '@react-navigation/native';
+//redux
+import { connect } from 'react-redux';
 
 const AddMoneyScreen = (props) => {
     const isFocused = useIsFocused();
 
+    // grab the number from params, or 0
     const number = props.route.params == undefined ? '0' : props.route.params.amount;
 
     const navigate = (location) => {
         props.navigation.navigate(location, { screen: 'Add Money', amount: props.route.params == undefined ? '0' : props.route.params.amount })
+    }
+
+    // deposit money into the users balance
+    const deposit_money = () => {
+        if(number == '0') return props.showAlert(appColors.error, props.lang('add_money_error'));
+
+        props.dispatch({
+            type: 'ADD_TO_BALANCE',
+            payload: number
+        });
+
+        props.showAlert(appColors.green, props.lang('deposit_success'))
+
+        props.navigation.navigate('Wallet')
     }
 
     return (
@@ -57,7 +74,7 @@ const AddMoneyScreen = (props) => {
                         dropDownMaxHeight={size(100)}
                         globalTextStyle={{color: appColors.black}}
                     />
-                    <TouchableOpacity style={[moneyActions.depositBtn, globalStyles.centerColumn]}>
+                    <TouchableOpacity style={[moneyActions.depositBtn, globalStyles.centerColumn]} onPress={() => deposit_money()}>
                         <Text style={[globalStyles.btnTextGreen, {fontSize: size(15), fontFamily: 'Barlow-Bold'}]}>{props.lang('deposit_money')}</Text>
                     </TouchableOpacity>
                 </View>
@@ -67,4 +84,9 @@ const AddMoneyScreen = (props) => {
     );
 };
 
-export default AddMoneyScreen;
+const mapStateToProps = (state) => {
+	const { alert, balance } = state
+	return { alert, balance }
+};
+
+export default connect(mapStateToProps)(AddMoneyScreen);

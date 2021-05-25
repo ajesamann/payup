@@ -23,38 +23,45 @@ const CreateAccountScreen = (props) => {
   
     const createAccount = () => {
         //grab the input info from user and send to firebase, then send to confirm account page
-        if(!password || !username || !email){
-            //toggle alert
-            props.showAlert(appColors.error, props.lang('fill_all'));
-        }else{
-		    toggleSpinner(true);
-            bcrypt.genSalt(10, (err, salt) => {
-                if(err){
-                    console.log(err)
-                }else{
-                    bcrypt.hash(password, salt, (err, hash) => {
-                        // Store hash in your password DB.
-                        if(err){
-		                    toggleSpinner(false);
-                            return;
-                        }else{
-                            let newUser = {
-                                username,
-                                email,
-                                password: hash,
-                            }
-        
-                            fetchUsers.addUser(newUser)
-                                .then(() => {
-                                    //toggle alert
-                                    toggleSpinner(false);
-                                    props.showAlert(appColors.green, props.lang('account_created_success'));
-                                })
+        if(!password || !username || !email) return props.showAlert(appColors.error, props.lang('fill_all'));
+
+        //email validating regular expression
+        const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //validate the email
+        if (!(emailRegEx.test(email))) return props.showAlert(appColors.error, props.lang('valid_email'));
+
+        toggleSpinner(true);
+        bcrypt.genSalt(10, (err, salt) => {
+            if(err){
+                console.log(err)
+            }else{
+                bcrypt.hash(password, salt, (err, hash) => {
+                    // store hashed password
+                    if(err){
+                        toggleSpinner(false);
+                        return;
+                    }else{
+                        let newUser = {
+                            username,
+                            email,
+                            password: hash,
+                            balance: '0'
                         }
-                    });
-                }
-            });
-        }
+    
+                        fetchUsers.addUser(newUser)
+                            .then(() => {
+                                //toggle alert
+                                toggleSpinner(false);
+                                props.showAlert(appColors.green, props.lang('account_created_success'));
+                            })
+                            .catch(error => {
+                                props.showAlert(appColors.error, props.lang('something_went_wrong'))
+                                toggleSpinner(false);
+                            });
+                    }
+                });
+            }
+        });
     }
   
     return (

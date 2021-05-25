@@ -33,7 +33,7 @@ const AccountScreen = (props) => {
                     <View style={[globalStyles.centerColumn, globalStyles.mb30, globalStyles.mt20]}>
                         <Text style={accountStyles.amount_sent}>$14.50</Text>
                         <View style={globalStyles.dividerColumn}></View>
-                        <Text style={accountStyles.sent_for}>"For being so damn cool brother."</Text>
+                        <Text style={accountStyles.sent_for}>"Here's some money broke boy."</Text>
                     </View>
                     <View style={[globalStyles.centerRow, globalStyles.w80]}>
                         <TouchableOpacity style={[accountStyles.accept_btn, globalStyles.centerColumn]}><Text style={globalStyles.btnTextWhite}>{props.lang('accept')}</Text></TouchableOpacity>

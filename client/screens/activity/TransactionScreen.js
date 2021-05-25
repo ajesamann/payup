@@ -34,7 +34,7 @@ const TransactionScreen = (props) => {
                     <Text style={[transactionStyles.infoText]}>10/17/19</Text>
                 </View>
                 <View style={[transactionStyles.infoCon, globalStyles.spreadRow]}>
-                    <Text style={[transactionStyles.infoText]}>"For Being A Cool Ass KILLA MY G"</Text>
+                    <Text style={[transactionStyles.infoText]}>"This is a paragraph for what the transaction would have been sent for."</Text>
                 </View>
                 <View style={[transactionStyles.infoCon, globalStyles.spreadRow]}>
                     <Text style={[transactionStyles.infoText, {color: appColors.gray}]}>Pending</Text>

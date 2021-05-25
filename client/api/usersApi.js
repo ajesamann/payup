@@ -6,9 +6,6 @@ export async function addUser(user){
         .then((data) => {
             console.log(data)
         })
-        .catch((err) => {
-            console.log('Error -> ', err)
-        });
 
 }
 
@@ -24,9 +21,5 @@ export async function getTargetedUser(queryGroup, operator, queryName){
                 return false;
             }
         })
-        .catch((err) => {
-            //if there is an error
-            console.log('Error -> ', err)
-        });
 
 }
