@@ -19,6 +19,7 @@ import { connect } from 'react-redux';
 import { PlaidLink } from 'react-native-plaid-link-sdk';
 
 const WalletScreen = (props) => {
+	//use store for this
 	const [linkToken, setLinkToken] = React.useState(null)
 
 	const isFocused = useIsFocused();
@@ -27,6 +28,7 @@ const WalletScreen = (props) => {
 		props.navigation.navigate(location);
 	}
 
+	//hit the create link token endpoint and grab a token for the user
 	const create_plaid_token = () => {
 		fetch('http://localhost:3001/create_link_token', {
 			method: 'POST',
@@ -112,6 +114,7 @@ const WalletScreen = (props) => {
 						<Icon name={'card-icon'} size={size(18)} color={appColors.gray}/>
 						<Text style={walletStyles.card_number}>**** **** **** 9999</Text>
 					</View>
+					{/* LINK USERS BANKING STUFF USING THE LINK TOKEN */}
 					<PlaidLink
 						tokenConfig={{
 							token: linkToken,
