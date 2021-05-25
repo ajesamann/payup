@@ -7,8 +7,8 @@ const session = require('express-session');
 const app = express();
 
 //routes
-require('./third_party_apis/plaid')(app);
-require('./session_api/session')(app);
+require('./routes/third_party/plaid')(app);
+require('./routes/session/session')(app);
 
 //port
 const PORT = process.env.PORT || 3001;
@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 3001;
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(session({
     secret: 'production',
     resave: true,
